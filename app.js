@@ -16,9 +16,9 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
-  let reply_token = req.body.events[0].replyToken;
+  // let reply_token = req.body.events[0].replyToken;
   let msg = req.body.events[0].message.text;
-
+  let sender = req.body.events[0].source.userId
  
   
     const options = {
@@ -41,24 +41,27 @@ app.post('/callback', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      reply(reply_token,name,price);
+      reply(sender,name,price);
     });
 
   res.sendStatus(200)
 })
 
-function reply(reply_token,name,price) {
+function reply(sender,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
   }
- let body = JSON.stringify({
-            messages: [{
+ let body ={
+            to: sender,
+            messages: [
+              {
             type: 'text',
             text: name + "ราคาตอนนี้คือ" + price + "บาท"
-            }]
-         })
+            }
+          ]
+         }
   
   request.post({
       url: 'https://api.line.me/v2/bot/message/reply',
