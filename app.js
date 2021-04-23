@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config()
+dotenv.config({path:__dirname +"/.env"})
 const express = require("express");
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -40,8 +40,6 @@ app.post('/webhook', (req, res) => {
       let name = Object.keys(coinInfo)[0];
 
       let price = coinInfo[name].thb;
-
-      // reply_token
 
       reply(reply_token,name,price);
     });
