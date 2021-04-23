@@ -49,7 +49,7 @@ function reply(reply_token,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer{' + process.env.DB_TOKEN +'}'
+      'Authorization': "Bearer{" + process.env.DB_TOKEN +"}"
   }
  let body = JSON.stringify({
             replyToken: reply_token,
