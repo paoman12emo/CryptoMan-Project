@@ -3,7 +3,6 @@ require('dotenv').config()
 const { request } = require('express');
 const express = require("express");
 const bodyParser = require('body-parser')
-const request = require('request')
 const rp = require('request-promise');
 
 
