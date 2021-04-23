@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
   let reply_token = req.body.events[0].replyToken;
   let msg = req.body.events[0].message.text;
-
+  
 
     const options = {
       method: 'GET',
@@ -41,23 +41,27 @@ app.post('/webhook', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-       reply(reply_token,name,price);
+      // reply_token
+
+      reply(reply_token,name,price);
     });
-    
+
   res.sendStatus(200)
 })
 
 
+
 function reply(reply_token,name,price) {
+
   let headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer {process.env.CHANNEL_TOKEN}'
   }
-           let body = JSON.stringify({
-             replyToken: reply_token,
-              messages: [{
-               type: 'text',
-                 text: "ราคาของ" + name + "คือ" + price + "บาท"
+ let body = JSON.stringify({
+            replyToken: reply_token,
+            messages: [{
+            type: 'text',
+            text: "ราคาของ" + name + "คือ" + price + "บาท"
             }]
          })
   
