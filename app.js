@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 4000
 
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 
 //Message
 
-app.post('/webhook', (req, res) => {
+app.get('/webhook', (req, res) => {
   let reply_token = req.body.events[0].replyToken
   reply(reply_token)
   res.sendStatus(200)
@@ -28,7 +28,7 @@ app.post('/webhook', (req, res) => {
 function reply(reply_token) {
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer {process.env.CHANNEL_TOKEN}'
+      'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
   }
   let body = JSON.stringify({
       replyToken: reply_token,
