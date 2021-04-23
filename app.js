@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require("express");
-const bodyParser = require('body-parser')
-const request = require('request')
+const bodyParser = require('body-parser');
+const request = require('request');
+const changeCoinName =  require("./changeCoinName.js");
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -21,8 +22,7 @@ app.post('/callback', (req, res) => {
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
   if (msg.substring(0,6) === "ดูราคา"){
-
-    const coin = msg.substring(6,msg.length)
+    const coin = changeCoinName(msg.substring(6,msg.length));
 
     const options = {
       method: 'GET',
