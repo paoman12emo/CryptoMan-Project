@@ -20,6 +20,7 @@ app.post('/callback', (req, res) => {
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.userId
  
+  console.log(req.body.events[0]);
   
     const options = {
       method: 'GET',
