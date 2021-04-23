@@ -1,8 +1,8 @@
 require('dotenv').config()
 
-const { request } = require('express');
 const express = require("express");
 const bodyParser = require('body-parser')
+const request = require('request')
 const rp = require('request-promise');
 
 
@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(express.json());
+
 
 
 
