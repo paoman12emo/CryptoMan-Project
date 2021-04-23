@@ -66,7 +66,7 @@ request({
         },
           url: 'https://api.line.me/v2/bot/message/push',
           method: 'POST',
-          body: data,
+          body: body,
           json: true
         }, function (err, res, body) {
           if (err) console.log('error')
