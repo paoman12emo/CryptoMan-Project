@@ -3,8 +3,8 @@ function changeCoinName(char){
 
 
   switch(char) {
-        case BTC:
-          return Bitcoin;
+        case "BTC":
+          return "Bitcoin";
           break;
         default:
           return char
