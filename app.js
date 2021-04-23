@@ -18,8 +18,7 @@ app.use(bodyParser.json())
 app.post('/callback', (req, res) => {
   // let reply_token = req.body.events[0].replyToken;
   let msg = req.body.events[0].message.text;
-  let sender = req.body.events[0].source.userId;
-  let groupid = req.body.events[0].source.groupId;
+  let sender = req.body.events[0].source.userId
  
   
     const options = {
@@ -42,13 +41,13 @@ app.post('/callback', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      reply(sender,name,price,groupid);
+      reply(sender,name,price);
     });
 
   res.sendStatus(200)
 })
 
-function reply(sender,name,price,groupid) {
+function reply(sender,name,price) {
 
  let body = {
             to: sender,
@@ -65,7 +64,7 @@ request({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
         },
-          url: 'https://api.line.me/v2/bot/group/'+ groupid +'/summary',
+          url: 'https://api.line.me/v2/bot/message/push',
           method: 'POST',
           body: body,
           json: true
