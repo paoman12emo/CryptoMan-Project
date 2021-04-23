@@ -6,6 +6,11 @@ const request = require('request')
 const app = express();
 const port = process.env.PORT || 4000
 
+const envVariables = process.env;
+
+const {
+  DB_TOKEN
+} = envVariables;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
@@ -49,7 +54,7 @@ function reply(reply_token,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer {'+process.env.DB_TOKEN+'}'
+      'Authorization': 'Bearer {'+DB_TOKEN+'}'
   }
  let body = JSON.stringify({
             replyToken: reply_token,
