@@ -21,27 +21,29 @@ app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
   let reply_token = req.body.events[0].replyToken;
   let msg = req.body.events[0].message.text;
-  reply(reply_token, msg);
+  
+  if(msg === "Crypto" ){
+    reply(reply_token);
+  }
+
+
   res.sendStatus(200)
 })
 
 
-function reply(reply_token, msg) {
+function reply(reply_token) {
   let headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
   }
-    if(msg === 'Crypto'){
-            let body = JSON.stringify({
-              replyToken: reply_token,
+           let body = JSON.stringify({
+             replyToken: reply_token,
               messages: [{
-                  type: 'text',
-                  text: "Ok let's see."
-              }]
-          })
-    }
-
- 
+               type: 'text',
+                 text: "Ok let's see."
+            }]
+         })
+  
   request.post({
       url: 'https://api.line.me/v2/bot/message/reply',
       headers: headers,
@@ -51,28 +53,28 @@ function reply(reply_token, msg) {
   });
 }
 
-const requestOptions = {
-  method: 'GET',
-  uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
-  qs: {
-    'start': '1',
-    'limit': '5000',
-    'convert': 'THB',
-     'price_min' : 0,
-     'price_max' : 10000000000
-  },
-  headers: {
-    'X-CMC_PRO_API_KEY': process.env.API_KEY
-  },
-  json: true,
-  gzip: true
-};
+// const requestOptions = {
+//   method: 'GET',
+//   uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+//   qs: {
+//     'start': '1',
+//     'limit': '5000',
+//     'convert': 'THB',
+//      'price_min' : 0,
+//      'price_max' : 10000000000
+//   },
+//   headers: {
+//     'X-CMC_PRO_API_KEY': process.env.API_KEY
+//   },
+//   json: true,
+//   gzip: true
+// };
 
-rp(requestOptions).then(response => {
-  console.log(response);
-}).catch((err) => {
-  console.log('API call error:', err.message);
-});
+// rp(requestOptions).then(response => {
+//   console.log(response);
+// }).catch((err) => {
+//   console.log('API call error:', err.message);
+// });
 
 
 
