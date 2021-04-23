@@ -3,15 +3,6 @@ const express = require("express");
 const bodyParser = require('body-parser')
 const request = require('request')
 
-const line = require('@line/bot-sdk');
-
-const config = {
-  channelAccessToken: "MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=",
-  channelSecret: "ff1b43dd6fe2ac67ef30f90bd5784b2b",
-};
-
-const client = new line.Client(config);
-
 const app = express();
 const port = process.env.PORT || 4000
 
@@ -24,58 +15,64 @@ app.use(bodyParser.json())
 
 //Message
 
-app.post('/callback', line.middleware(config), (req, res) => {
+app.post('/callback', (req, res) => {
+  let reply_token = req.body.events[0].replyToken;
+  let msg = req.body.events[0].message.text;
 
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).end();
-    });
-});
-
-// event handler
-function handleEvent(event) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
-    return Promise.resolve(null);
-  }
-
-  const x = [];
-
-  const options = {
-    method: 'GET',
-    url: 'https://coingecko.p.rapidapi.com/simple/price',
-    qs: {ids: event.message.text, vs_currencies: 'THB', include_last_updated_at: 'true'},
-    headers: {
-      'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
-      'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-      useQueryString: true
-    }
-  };
+ 
   
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-  
-    let coinInfo = JSON.parse(body);
+    const options = {
+      method: 'GET',
+      url: 'https://coingecko.p.rapidapi.com/simple/price',
+      qs: {ids: msg, vs_currencies: 'THB', include_last_updated_at: 'true'},
+      headers: {
+        'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
+        'x-rapidapi-host': 'coingecko.p.rapidapi.com',
+        useQueryString: true
+      }
+    };
     
-   let name = Object.keys(coinInfo)[0];
-  
-   let price = coinInfo[name].thb;
-   
-  // create a text message
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
 
-   const result = { type: 'text', text: name + "ราคาตอนนี้คือ" + price + "บาท" };
+      let coinInfo = JSON.parse(body);
+      
+      let name = Object.keys(coinInfo)[0];
+
+      let price = coinInfo[name].thb;
+
+      reply(reply_token,name,price);
+    });
+
+  res.sendStatus(200)
+})
+
+function reply(reply_token,name,price) {
+
+  let headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+  }
+ let body = JSON.stringify({
+            replyToken: reply_token,
+            messages: [{
+            type: 'text',
+            text: name + "ราคาตอนนี้คือ" + price + "บาท"
+            }]
+         })
   
-    x.push(result);
+  request.post({
+      url: 'https://api.line.me/v2/bot/message/reply',
+      headers: headers,
+      body: body
+  }, (err, res, body) => {
+      console.log('status = ' + res.statusCode);
   });
-
-  let b = x[0];
-
-  // use reply API
-  return client.replyMessage(event.replyToken, b);
 }
+
+
+
+
 
 
 
