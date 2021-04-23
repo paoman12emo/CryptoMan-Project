@@ -20,7 +20,6 @@ app.post('/webhook', (req, res) => {
   let reply_token = req.body.events[0].replyToken;
   let msg = req.body.events[0].message.text;
 
- 
 
     const options = {
       method: 'GET',
@@ -33,22 +32,23 @@ app.post('/webhook', (req, res) => {
       }
     };
     
-    request(options, function (error, response, body) {
+    request(options, async function (error, response, body) {
       if (error) throw new Error(error);
 
-      let coin = JSON.parse(body);
+      let coinInfo = JSON.parse(body);
       
-      let price= coin.msg.thb
+      let name = Object.keys(coinInfo)[0];
 
-      console.log(price);
-      reply(reply_token, price);
+      let price = coinInfo[name].thb;
+
+      await reply(name,price);
     });
     
   res.sendStatus(200)
 })
 
 
-function reply(reply_token, price) {
+function reply(reply_token,name,price) {
   let headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer {process.env.CHANNEL_TOKEN}'
@@ -57,7 +57,7 @@ function reply(reply_token, price) {
              replyToken: reply_token,
               messages: [{
                type: 'text',
-                 text: "ราคา"+price
+                 text: "ราคาของ" + name + "คือ" + price + "บาท"
             }]
          })
   
