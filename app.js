@@ -41,7 +41,7 @@ app.post('/webhook', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      await reply(name,price);
+      await reply(reply_token,name,price);
     });
     
   res.sendStatus(200)
