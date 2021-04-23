@@ -28,10 +28,9 @@ app.post('/callback', (req, res) => {
       method: 'GET',
       url: 'https://coingecko.p.rapidapi.com/simple/price',
       qs: {ids: coin, vs_currencies: 'THB',
-           include_last_updated_at: 'true',
            include_market_cap: 'true',
-           include_24hr_change: 'true',
-           include_24hr_vol: 'true'},
+           include_24hr_change: 'true'
+           },
       headers: {
         'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
         'x-rapidapi-host': 'coingecko.p.rapidapi.com',
@@ -49,7 +48,9 @@ app.post('/callback', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      reply(sender,name,price);
+      let change = coinInfo[name].thb_24h_change;
+
+      reply(sender,name,price,change);
     });
   }
   
@@ -59,7 +60,7 @@ app.post('/callback', (req, res) => {
   res.sendStatus(200)
 })
 
-function reply(sender,name,price) {
+function reply(sender,name,price,change) {
 
  let body = {
             to: sender,
@@ -67,7 +68,11 @@ function reply(sender,name,price) {
               {
             type: 'text',
             text: name + "ราคาตอนนี้คือ" + price + "บาท"
-            }
+            },
+            {
+              type: 'text',
+              text: "ภายใน 24 ชั่วโมงปรับตัวไป" + change + "%"
+              }
           ]
          }
   
