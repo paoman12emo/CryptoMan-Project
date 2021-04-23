@@ -16,10 +16,14 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
+
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
- 
-  console.log(req.body.events[0]);
+
+  if (msg.substring(0,5) === "ดูราคา"){
+
+    const coin = msg.substring(6)
+    console.log(req.body.events[0]);
   
     const options = {
       method: 'GET',
@@ -43,6 +47,10 @@ app.post('/callback', (req, res) => {
 
       reply(sender,name,price);
     });
+  }
+  
+ 
+  
 
   res.sendStatus(200)
 })
