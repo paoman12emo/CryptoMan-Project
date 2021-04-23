@@ -16,10 +16,12 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/webhook', (req, res) => {
-  let reply_token = req.body.events[0].replyToken;
-  let msg = req.body.events[0].message.text;
-  
+  // let reply_token = req.body.events[0].replyToken;
+  // let msg = req.body.events[0].message.text;
 
+  let msg ="Monero"
+  
+  
     const options = {
       method: 'GET',
       url: 'https://coingecko.p.rapidapi.com/simple/price',
@@ -40,7 +42,7 @@ app.post('/webhook', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      reply(reply_token,name,price);
+      // reply(reply_token,name,price);
     });
 
   res.sendStatus(200)
@@ -52,7 +54,7 @@ function reply(reply_token,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer {process.env.DB_TOKEN}'
+      'Authorization': 'Bearer{' + process.env.DB_TOKEN +'}'
   }
  let body = JSON.stringify({
             replyToken: reply_token,
