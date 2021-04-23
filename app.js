@@ -79,30 +79,6 @@ function handleEvent(event) {
 
 
 
-const options = {
-  method: 'GET',
-  url: 'https://coingecko.p.rapidapi.com/simple/price',
-  qs: {ids: msg, vs_currencies: 'THB', include_last_updated_at: 'true'},
-  headers: {
-    'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
-    'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-    useQueryString: true
-  }
-};
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  let coinInfo = JSON.parse(body);
-  
-  let name = Object.keys(coinInfo)[0];
-
-  let price = coinInfo[name].thb;
-
-});
-
-
-
 app.listen(port, function() {
     console.log("Server is online.")
   });
