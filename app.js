@@ -32,7 +32,7 @@ app.post('/webhook', (req, res) => {
       }
     };
     
-    request(options, async function (error, response, body) {
+    request(options, function (error, response, body) {
       if (error) throw new Error(error);
 
       let coinInfo = JSON.parse(body);
@@ -41,7 +41,7 @@ app.post('/webhook', (req, res) => {
 
       let price = coinInfo[name].thb;
 
-      await reply(reply_token,name,price);
+       reply(reply_token,name,price);
     });
     
   res.sendStatus(200)
