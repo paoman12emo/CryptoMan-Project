@@ -24,7 +24,7 @@ app.post('/callback', (req, res) => {
 
   if (msg.substring(0,6) === "ดูราคา"){
 
-    const coin = msg.substring(7)
+    const coin = msg.substring(7,msg.length)
     console.log(req.body.events[0]);
   
     const options = {
