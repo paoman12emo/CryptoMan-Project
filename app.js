@@ -63,7 +63,7 @@ function reply(sender,name,price) {
           ]
          }
   
-  request.post({
+  request({
       url: 'https://api.line.me/v2/bot/message/reply',
       headers: headers,
       body: body,
