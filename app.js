@@ -48,13 +48,13 @@ app.post('/webhook', (req, res) => {
   res.sendStatus(200)
 })
 
-
+// 'Authorization': 'Bearer{' + process.env.DB_TOKEN +'}'
 
 function reply(reply_token,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer{' + process.env.DB_TOKEN +'}'
+      'Authorization': 'Bearer{MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
   }
  let body = JSON.stringify({
             replyToken: reply_token,
