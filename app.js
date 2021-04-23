@@ -6,8 +6,8 @@ const request = require('request')
 const line = require('@line/bot-sdk');
 
 const config = {
-  channelAccessToken:  process.env.CHANNEL_ACCESS_TOKEN,
-  channelSecret: process.env.CHANNEL_SECRET,
+  channelAccessToken: "MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=",
+  channelSecret: "ff1b43dd6fe2ac67ef30f90bd5784b2b",
 };
 
 const client = new line.Client(config);
