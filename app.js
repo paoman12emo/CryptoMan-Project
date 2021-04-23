@@ -28,7 +28,6 @@ app.post('/callback', (req, res) => {
       method: 'GET',
       url: 'https://coingecko.p.rapidapi.com/simple/price',
       qs: {ids: coin, vs_currencies: 'THB',
-           include_market_cap: 'true',
            include_24hr_change: 'true',
            include_24hr_vol: 'true'
            },
@@ -51,7 +50,7 @@ app.post('/callback', (req, res) => {
 
       let change = coinInfo[name].thb_24h_change;
 
-      let vol = coinInfo[name].thb_24h_change
+      let vol = coinInfo[name].thb_24h_vol;
 
       reply(sender,name,price,change,vol);
     });
