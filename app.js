@@ -20,11 +20,11 @@ app.post('/callback', (req, res) => {
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-  console.log(msg.substring(0,6));
+  console.log(msg.substring(0,5));
 
-  if (msg.substring(0,6) === "ดูราคา"){
+  if (msg.substring(0,5) === "ดูราคา"){
 
-    const coin = msg.substring(7,msg.length)
+    const coin = msg.substring(6,msg.length)
 
     console.log(coin);
   
