@@ -47,7 +47,7 @@ function handleEvent(event) {
   const options = {
     method: 'GET',
     url: 'https://coingecko.p.rapidapi.com/simple/price',
-    qs: {ids: msg, vs_currencies: 'THB', include_last_updated_at: 'true'},
+    qs: {ids: event.message.text, vs_currencies: 'THB', include_last_updated_at: 'true'},
     headers: {
       'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
       'x-rapidapi-host': 'coingecko.p.rapidapi.com',
