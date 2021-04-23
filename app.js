@@ -1,5 +1,4 @@
-const dotenv = require("dotenv");
-dotenv.config({path:__dirname +"/.env"})
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -53,7 +52,7 @@ function reply(reply_token,name,price) {
 
   let headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer {process.env.CHANNEL_TOKEN}'
+      'Authorization': 'Bearer {process.env.DB_TOKEN}'
   }
  let body = JSON.stringify({
             replyToken: reply_token,
