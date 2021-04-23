@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 4000
 
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
@@ -49,11 +49,7 @@ app.post('/callback', (req, res) => {
 
 function reply(sender,name,price) {
 
-  let headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
-  }
- let body ={
+ let body = {
             to: sender,
             messages: [
               {
@@ -63,17 +59,21 @@ function reply(sender,name,price) {
           ]
          }
   
-  request({
-      url: 'https://api.line.me/v2/bot/message/reply',
-      headers: headers,
-      body: body,
-      json: true
-  }, (err, res, body) => {
-    if (err) console.log('error')
-    if (res) console.log('success')
-    if (body) console.log(body)
-  });
-}
+request({
+          headers:  {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+        },
+          url: 'https://api.line.me/v2/bot/message/push',
+          method: 'POST',
+          body: data,
+          json: true
+        }, function (err, res, body) {
+          if (err) console.log('error')
+          if (res) console.log('success')
+          if (body) console.log(body)
+        })
+      }
 
 
 
