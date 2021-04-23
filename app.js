@@ -66,9 +66,12 @@ function reply(sender,name,price) {
   request.post({
       url: 'https://api.line.me/v2/bot/message/reply',
       headers: headers,
-      body: body
+      body: body,
+      json: true
   }, (err, res, body) => {
-      console.log('status = ' + res.statusCode);
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
   });
 }
 
