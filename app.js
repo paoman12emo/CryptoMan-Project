@@ -20,18 +20,18 @@ app.post('/callback', (req, res) => {
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-  console.log(msg.substring(0,6));
-
   if (msg.substring(0,6) === "ดูราคา"){
 
     const coin = msg.substring(6,msg.length)
 
-    console.log(coin);
-  
     const options = {
       method: 'GET',
       url: 'https://coingecko.p.rapidapi.com/simple/price',
-      qs: {ids: coin, vs_currencies: 'THB', include_last_updated_at: 'true'},
+      qs: {ids: coin, vs_currencies: 'THB',
+           include_last_updated_at: 'true',
+           include_market_cap: 'true',
+           include_24hr_change: 'true',
+           include_24hr_vol: 'true'},
       headers: {
         'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
         'x-rapidapi-host': 'coingecko.p.rapidapi.com',
@@ -43,6 +43,7 @@ app.post('/callback', (req, res) => {
       if (error) throw new Error(error);
 
       let coinInfo = JSON.parse(body);
+      console.log(coinInfo);
       
       let name = Object.keys(coinInfo)[0];
 
