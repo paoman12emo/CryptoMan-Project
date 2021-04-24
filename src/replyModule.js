@@ -6,8 +6,6 @@ const request = require('request');
 
 async function reply(sender,name,price,change,vol) {
 
-    let newName = name.replace(" ","-");
-   console.log(newName);
  
     let body = {
                to: sender,
@@ -25,7 +23,7 @@ async function reply(sender,name,price,change,vol) {
                       "contents": [
                         {
                           "type": "text",
-                          "text": newName.toUpperCase()+" 💰",
+                          "text": name.toUpperCase()+" 💰",
                           "size": "3xl",
                           "color": "#536162",
                           "contents": []
@@ -135,7 +133,7 @@ async function reply(sender,name,price,change,vol) {
                           "action": {
                             "type": "uri",
                             "label": "More info",
-                            "uri": "https://coinmarketcap.com/currencies/"+newName+"/"
+                            "uri": "https://coinmarketcap.com/currencies/"+name+"/"
                           },
                           "color": "#98DDCA",
                           "gravity": "bottom",
