@@ -20,7 +20,6 @@ function queryCoin(coinName,sender){
         if (error) throw new Error(error);
   
         let coinInfo = JSON.parse(body);
-        console.log(coinInfo);
         
         let name = Object.keys(coinInfo)[0];
   

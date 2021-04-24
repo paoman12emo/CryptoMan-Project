@@ -34,6 +34,7 @@ if(status!= "join"){
 
   if (/^ *$/.test(msg)){
     let coin = msg.split(" ");
+    console.log(coin);
     var key = gateCheck(coin[0]);
   }else{
     var key = false;
