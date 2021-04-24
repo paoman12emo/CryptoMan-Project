@@ -1,4 +1,4 @@
-const {reply} = require("./replyModule.js");
+const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
 
 function queryCoin(coinName,sender){
@@ -30,7 +30,9 @@ function queryCoin(coinName,sender){
   
         reply(sender,name,price,change,vol);
 
-       }
+       }else(
+        fallBack(sender)
+       )
   
       });
 }
