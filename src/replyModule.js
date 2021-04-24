@@ -1,4 +1,3 @@
-const cal = require("./Calculate.js")
 
 const request = require('request');
 
@@ -43,6 +42,7 @@ async function reply(sender,name,price,change,vol) {
                       "spacing": "none",
                       "margin": "none",
                       "position": "relative",
+                      "height": "50%",
                       "contents": [
                         {
                           "type": "box",
@@ -86,14 +86,14 @@ async function reply(sender,name,price,change,vol) {
                           "spacing": "none",
                           "margin": "none",
                           "position": "absolute",
-                          "offsetBottom": "13%",
+                          "offsetBottom": "15%",
                           "offsetStart": "60%",
                           "contents": [
                             {
                               "type": "text",
-                              "text": await cal(price) +"บาท",
+                              "text": price +"บาท",
                               "weight": "regular",
-                              "size": "md",
+                              "size": "sm",
                               "color": "#C06014",
                               "align": "start",
                               "contents": []
@@ -102,16 +102,16 @@ async function reply(sender,name,price,change,vol) {
                               "type": "text",
                               "text": change.toFixed(2)+"%",
                               "weight": "regular",
-                              "size": "md",
+                              "size": "sm",
                               "color": "#C06014",
                               "align": "start",
                               "contents": []
                             },
                             {
                               "type": "text",
-                              "text": await cal(vol)+"บาท",
+                              "text": vol+"บาท",
                               "weight": "regular",
-                              "size": "md",
+                              "size": "sm",
                               "color": "#C06014",
                               "align": "start",
                               "contents": []
