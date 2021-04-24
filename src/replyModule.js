@@ -7,8 +7,8 @@ const request = require('request');
 async function reply(sender,name,price,change,vol) {
 
     let newName = name.replace(" ","-");
-
-
+   console.log(newName);
+ 
     let body = {
                to: sender,
                messages: [
