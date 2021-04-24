@@ -1,8 +1,9 @@
 
 function changeCoinName(char){
 
+  const chare = char.toUpperCase();
 
-  switch(char) {
+  switch(chare) {
         case "BTC":
           return "Bitcoin";
           break;
@@ -15,10 +16,10 @@ function changeCoinName(char){
         case "Binance Coin":
           return "Binancecoin";
           break;
-        case "BTC":
-          return "Bitcoin";
+        case "LTC":
+          return "Litecoin";
           break;
-        case "USDT"||"usdt":
+        case "USDT":
           return "Tether";
           break;
           case "ADA":
@@ -33,8 +34,8 @@ function changeCoinName(char){
         case "XPM":
           return "Primecoin";
           break;
-          case "BTC":
-          return "Bitcoin";
+          case "NXT":
+          return "Nxt";
           break;
         case "XRP":
           return "Ripple";

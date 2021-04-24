@@ -32,7 +32,7 @@ if(status!= "join"){
   const msg = req.body.events[0].message.text;
 
 
-  if(msg.substring(0,2)==="cm"|| msg.substring(0,2)==="Cm" || msg.substring(0,2)==="CM" || msg.substring(0,2)==="cM"){
+  if(msg.substring(0,2).toUpperCase()==="CM"){
     const msg = req.body.events[0].message.text;
     const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
    
