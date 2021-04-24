@@ -3,8 +3,13 @@ const request = require('request');
 
 
 function queryCoin(coinName,sender,cur){
-  console.log(cur);
+  if(cur==="USD"){
+    var newCur = "USD"
+  }else{
+    var newCur = "THB"
+  }
  
+  console.log(newCur);
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
