@@ -24,20 +24,20 @@ function changeCoinName(char){
           case "ADA":
           return "Cardano";
           break;
-        case "BTC":
-          return "Bitcoin";
+        case "DOGE":
+          return "Dogecoin";
+          break;
+          case "GRC":
+          return "Gridcoin";
+          break;
+        case "XPM":
+          return "Primecoin";
           break;
           case "BTC":
           return "Bitcoin";
           break;
-        case "BTC":
-          return "Bitcoin";
-          break;
-          case "BTC":
-          return "Bitcoin";
-          break;
-        case "BTC":
-          return "Bitcoin";
+        case "XRP":
+          return "Ripple";
           break;
         default:
           return char
