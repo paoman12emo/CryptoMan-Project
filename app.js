@@ -33,7 +33,7 @@ if(status!= "join"){
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
   if (/^ *$/.test(msg)){
-    var coin = msg.split(" ");
+    let coin = msg.split(" ");
     var key = gateCheck(coin[0]);
   }else{
     var key = gateCheck(msg);
@@ -41,7 +41,7 @@ if(status!= "join"){
 
     if(key= true){
 
-    let coinName = changeCoinName(coin[1])
+    let coinName = changeCoinName(msg.split(" ")[1])
 
     await queryCoin(coinName,sender)
 
