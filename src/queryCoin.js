@@ -25,7 +25,7 @@ function queryCoin(coinName,sender,cur){
         const coinInfo = JSON.parse(body);
         console.log(coinInfo);
 
-        const name = Object.keys(coinInfo)[0];
+        var name = Object.keys(coinInfo)[0];
 
         if(coinInfo[name].thb){
           var price = coinInfo[name].thb;
