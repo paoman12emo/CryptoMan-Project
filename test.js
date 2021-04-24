@@ -1,8 +1,3 @@
-var AES = require("crypto-js/aes");
-var SHA256 = require("crypto-js/sha256");
-var CryptoJS = require("crypto-js");
-var HmacSHA1 = require("crypto-js/hmac-sha512");
+let msg = "cmtใช้ยังไง"
 
-
-console.log(CryptoJS.HmacSHA1("Message", "Key"));
-
+console.log(msg.substring(3,11));

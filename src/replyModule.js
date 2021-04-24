@@ -66,10 +66,10 @@ request({
       }    
 
 
-  function howTo(groupId) {
+  function howTo(sender) {
 
         let body = {
-                   to: groupId,
+                   to: sender,
                    messages: [
                      {
                    type: 'text',

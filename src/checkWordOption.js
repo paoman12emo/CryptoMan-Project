@@ -1,6 +1,7 @@
 const changeCoinName =  require("./changeCoinName.js");
+const howTo = require("./replyModule.js");
 
-function checkWord(char){
+function checkWord(char,sender){
 
 
 let msg = char.replace(/\s/g, '');
@@ -15,7 +16,7 @@ let msg = char.replace(/\s/g, '');
         return changeCoinName(msg.substring(7,msg.length));  
     }
     else if(msg.substring(3,11) === "ใช้ยังไง"){
-        return changeCoinName(msg.substring(7,msg.length));  
+        howTo(sender);  
     }     
     else{
         return changeCoinName(msg.substring(3,msg.length)) 

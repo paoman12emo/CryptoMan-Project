@@ -34,9 +34,9 @@ if(status!= "join"){
 
   if(msg.substring(0,3).toUpperCase()==="CMT"){
     const msg = req.body.events[0].message.text;
-    const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
+    let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
    
-    let coinName = checkWord(msg);
+    let coinName = checkWord(msg,sender);
      
     console.log(coinName);
 
