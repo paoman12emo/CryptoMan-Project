@@ -51,7 +51,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": "ราคาตอนนี้ 📈 ",
+                                  "text": "ราคาตอนนี้",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
@@ -75,7 +75,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": "ภายใน24hrปรับตัว 📈",
+                                  "text": "ภายใน24hrปรับตัว",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
@@ -99,7 +99,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": " มูลค่าตลาด24hr 📈",
+                                  "text": " มูลค่าตลาด24hr",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
@@ -127,6 +127,17 @@ async function reply(sender,name,price,change,vol) {
                         {
                           "type": "spacer",
                           "size": "xxl"
+                        },
+                        {
+                          "type": "button",
+                          "action": {
+                            "type": "uri",
+                            "label": "More info",
+                            "uri": "https://coinmarketcap.com/currencies/"+name+"/"
+                          },
+                          "color": "#98DDCA",
+                          "gravity": "bottom",
+                          "offsetBottom": "20%"
                         }
                       ]
                     }
