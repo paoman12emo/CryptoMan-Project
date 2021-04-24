@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
 const request = require('request');
-const changeCoinName =  require("./src/changeCoinName.js");
 const {reply, greeting} = require("./src/replyModule.js");
 const checkWord = require("./src/checkword.js");
 
@@ -31,7 +30,7 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-    const coin = changeCoinName(checkWord(msg));
+    const coin = checkWord(msg);
 
 
     const options = {

@@ -1,3 +1,5 @@
+const changeCoinName =  require("./changeCoinName.js");
+
 function checkWord(msg){
     switch(msg) {
         case msg.substring(0,6) === "ดูราคา":
