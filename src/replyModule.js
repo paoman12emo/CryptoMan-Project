@@ -133,7 +133,7 @@ async function reply(sender,name,price,change,vol) {
                           "action": {
                             "type": "uri",
                             "label": "More info",
-                            "uri": "https://coinmarketcap.com/currencies/"+name+"/"
+                            "uri": "https://coinmarketcap.com/currencies/"+name=="BINANCECOIN"?"BINANCE-COIN":name+"/"
                           },
                           "color": "#98DDCA",
                           "gravity": "bottom",
