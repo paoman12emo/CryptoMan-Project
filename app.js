@@ -29,6 +29,7 @@ app.post('/callback',(req, res) => {
 
 if(status!= "join"){
   const char = req.body.events[0].message.text;
+  const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
   let msg = char.replace(/\s/g, '');
     
