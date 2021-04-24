@@ -93,5 +93,5 @@ request({
                  if (body) console.log(body)
                })
              }
-             
-module.exports = {reply,greeting,howTo,fallBack};
+
+module.exports = {reply,greeting,howTo};

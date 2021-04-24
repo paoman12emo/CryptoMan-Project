@@ -1,4 +1,4 @@
-const {reply,fallBack} = require("./replyModule.js");
+const {reply} = require("./replyModule.js");
 const request = require('request');
 
 function queryCoin(coinName,sender){
