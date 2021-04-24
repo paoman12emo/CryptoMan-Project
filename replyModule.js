@@ -1,3 +1,6 @@
+const request = require('request');
+
+
 function reply(sender,name,price,change,vol) {
 
     let body = {
