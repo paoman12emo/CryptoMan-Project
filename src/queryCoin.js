@@ -21,10 +21,11 @@ function queryCoin(coinName,sender,cur){
       request(options, function (err, response, body) {
      try{
         const coinInfo = JSON.parse(body);
+        console.log(coinInfo);
         
         const name = Object.keys(coinInfo)[0];
       
-        const price = coinInfo[name].thb===true?coinInfo[name].thb:coinInfo[name].usd;
+        const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
         
         const change = coinInfo[name].thb_24h_change;
   
