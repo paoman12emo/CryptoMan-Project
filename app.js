@@ -25,7 +25,7 @@ app.post('/callback', (req, res) => {
    status === "join"&& greeting(groupId);
 
 
-
+if(!status){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
@@ -69,7 +69,7 @@ app.post('/callback', (req, res) => {
   
 
   res.sendStatus(200)
-
+}
   
   
 })
