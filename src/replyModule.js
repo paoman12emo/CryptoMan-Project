@@ -94,4 +94,31 @@ request({
                })
              }
 
-module.exports = {reply,greeting,howTo};
+  function fallBack(sender) {
+
+        let body = {
+                   to: sender,
+                   messages: [
+                     {
+                   type: 'text',
+                   text: "ขอโทดครับ ไม่พบข้อมูล หรือ พิมพ๋ผิดรึเปล่าครับ"
+                   }
+                 ]
+                }
+         
+       request({
+                 headers:  {
+                   'Content-Type': 'application/json',
+                   'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+               },
+                 url: 'https://api.line.me/v2/bot/message/push',
+                 method: 'POST',
+                 body: body,
+                 json: true
+               }, function (err, res, body) {
+                 if (err) console.log('error')
+                 if (res) console.log('success')
+                 if (body) console.log(body)
+               })
+             }
+module.exports = {reply,greeting,howTo,fallBack};

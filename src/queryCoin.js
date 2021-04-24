@@ -1,4 +1,4 @@
-const {reply} = require("./replyModule.js");
+const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
 
 function queryCoin(coinName,sender){
@@ -27,9 +27,13 @@ function queryCoin(coinName,sender){
         const change = coinInfo[name].thb_24h_change;
   
         const vol = coinInfo[name].thb_24h_vol;
-  
-        reply(sender,name,price,change,vol);
 
+     if(name==="undefined"){
+      fallBack(sender)
+     }else{
+      reply(sender,name,price,change,vol);
+     }
+  
        }
   
       });
