@@ -13,7 +13,7 @@ function changeCoinName(char){
         case "BNB":
           return "Binancecoin";
           break;
-        case "Binance Coin":
+        case "BINANCE":
           return "Binancecoin";
           break;
         case "LTC":
