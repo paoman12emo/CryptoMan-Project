@@ -105,9 +105,9 @@ function reply(sender,name,price,change,vol) {
                               "type": "text",
                               "text": change.toFixed(2)+"%",
                               "weight": "regular",
-                              "size": "start",
+                              "size": "md",
                               "color": "#C06014",
-                              "align": "end",
+                              "align": "start",
                               "contents": []
                             },
                             {
