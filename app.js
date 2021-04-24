@@ -32,7 +32,7 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-  if (/^ *$/.test(msg)){
+  if (/\s/g.test(msg)){
     let coin = msg.split(" ");
     console.log(coin);
     var key = gateCheck(coin[0]);
