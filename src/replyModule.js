@@ -60,8 +60,8 @@ async function reply(sender,name,price,change,vol) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": price.toFixed(2)+"฿",
-                                  "size": "sm",
+                                  "text": price.toFixed(2)+" ฿",
+                                  "size": "xxs",
                                   "color": "#C06014",
                                   "align": "end",
                                   "contents": []
@@ -84,8 +84,8 @@ async function reply(sender,name,price,change,vol) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": change.toFixed(2)+"%",
-                                  "size": "sm",
+                                  "text": change.toFixed(2)+" %",
+                                  "size": "xxs",
                                   "color": "#C06014",
                                   "align": "end",
                                   "contents": []
@@ -107,8 +107,8 @@ async function reply(sender,name,price,change,vol) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": vol/1000>=1&&vol.toFixed(2)+"K"+" ฿",
-                                  "size": "sm",
+                                  "text": vol.toFixed(2)+" ฿",
+                                  "size": "xxs",
                                   "color": "#C06014",
                                   "align": "end",
                                   "contents": []
