@@ -21,17 +21,17 @@ app.use(bodyParser.json())
 app.post('/callback',(req, res) => {
   
   const status = req.body.events[0].type;
-  const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
+  const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
+  const char = req.body.events[0].message.text;
 
-   status === "join"&& greeting(groupId);
+  let msg = char.replace(/\s/g, '');
+
+  status === "join"&& greeting(sender);
   
 
 
 if(status!= "join"){
-  const char = req.body.events[0].message.text;
-  const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
-
-  let msg = char.replace(/\s/g, '');
+  
     
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
