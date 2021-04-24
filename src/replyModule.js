@@ -7,21 +7,128 @@ const request = require('request');
 
 function reply(sender,name,price,change,vol) {
 
+  
     let body = {
                to: sender,
                messages: [
-                 {
-               type: 'text',
-               text: name + "ราคาตอนนี้คือ " + price + " บาท"
-               },
-               {
-                 type: 'text',
-                 text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change.toFixed(2) + " %"
-               },
-               {
-                 type: 'text',
-                 text: "ปริมาณการซื้อค้าภายใน 24 ชั่วโมง " + vol + " บาท"
-               }
+                {
+                  "type": "bubble",
+                  "header": {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "margin": "none",
+                    "backgroundColor": "#F3F4ED",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": name,
+                            "size": "4xl",
+                            "color": "#536162",
+                            "contents": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "none",
+                    "margin": "none",
+                    "position": "relative",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%99%E0%B8%B5%E0%B9%89",
+                            "weight": "bold",
+                            "size": "md",
+                            "color": "#424642",
+                            "align": "start",
+                            "gravity": "top",
+                            "margin": "none",
+                            "style": "normal",
+                            "contents": []
+                          },
+                          {
+                            "type": "text",
+                            "text": "%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%9924hr",
+                            "weight": "bold",
+                            "size": "md",
+                            "color": "#424642",
+                            "align": "start",
+                            "contents": []
+                          },
+                          {
+                            "type": "text",
+                            "text": "%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A0%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%9924hr",
+                            "weight": "bold",
+                            "size": "md",
+                            "color": "#424642",
+                            "align": "start",
+                            "contents": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "none",
+                        "margin": "none",
+                        "position": "absolute",
+                        "offsetBottom": "11%",
+                        "offsetStart": "60%",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": price +"บาท",
+                            "weight": "regular",
+                            "size": "md",
+                            "color": "#C06014",
+                            "align": "end",
+                            "contents": []
+                          },
+                          {
+                            "type": "text",
+                            "text": change.toFixed(2)+"%",
+                            "weight": "regular",
+                            "size": "md",
+                            "color": "#C06014",
+                            "align": "end",
+                            "contents": []
+                          },
+                          {
+                            "type": "text",
+                            "text": vol+"บาท",
+                            "weight": "regular",
+                            "size": "md",
+                            "color": "#C06014",
+                            "align": "end",
+                            "contents": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "backgroundColor": "#424642",
+                    "contents": [
+                      {
+                        "type": "spacer",
+                        "size": "md"
+                      }
+                    ]
+                  }
+                }
              ]
             }
      
