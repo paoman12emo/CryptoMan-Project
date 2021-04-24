@@ -33,7 +33,7 @@ if(status!= "join"){
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
 
-  if(msg.substring(0,1)==="cm" || "CM"){
+  if(msg.substring(0,1)==="cm" || "CM" || "Cm"){
     console.log("ok");
     let coinName = checkWord(msg);
     
