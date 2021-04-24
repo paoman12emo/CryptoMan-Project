@@ -26,3 +26,4 @@ async function queryDF(message, projectId = 'cryptoman-quba') {
     const responses = await sessionClient.detectIntent(request);
     return responses[0].queryResult;
 }
+module.exports = queryDF;
