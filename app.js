@@ -41,7 +41,7 @@ if(status!= "join"){
     var key = false;
   }
 
-    if(key= true){
+    if(key === true){
 
     let coinName = changeCoinName(msg.split(" ")[1])
 
