@@ -16,13 +16,12 @@ function queryCoin(coinName,sender){
         }
       };
       
-      request(options, function (error, response, body) {
-       if(!error){
+      request(options, function (err, response, body) {
+     try{
         const coinInfo = JSON.parse(body);
         
         const name = Object.keys(coinInfo)[0];
-        
-  
+      
         const price = coinInfo[name].thb;
         
         const change = coinInfo[name].thb_24h_change;
@@ -38,6 +37,10 @@ function queryCoin(coinName,sender){
      }
   
        }
+    catch(err){
+      console.log(err);
+      fallBack(sender);
+    }
   
       });
 }
