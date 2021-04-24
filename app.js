@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const changeCoinName =  require("./src/changeCoinName.js");
 const {reply, greeting} = require("./src/replyModule.js");
+const checkWord = require("./src/checkword.js");
 
 
 const app = express();
@@ -30,11 +31,8 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
+    const coin = changeCoinName(checkWord(msg));
 
-  console.log(x);
-
-  if (msg.substring(0,6) === "ดูราคา"){
-    const coin = changeCoinName(msg.substring(6,msg.length));
 
     const options = {
       method: 'GET',
@@ -72,7 +70,7 @@ if(status!= "join"){
   
 
   res.sendStatus(200)
-}
+
   
   
 })
