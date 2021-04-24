@@ -89,7 +89,7 @@ function reply(sender,name,price,change,vol) {
                           "spacing": "none",
                           "margin": "none",
                           "position": "absolute",
-                          "offsetBottom": "11%",
+                          "offsetBottom": "13%",
                           "offsetStart": "60%",
                           "contents": [
                             {
