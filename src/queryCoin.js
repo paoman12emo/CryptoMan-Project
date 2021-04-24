@@ -25,23 +25,15 @@ function queryCoin(coinName,sender,cur){
         const coinInfo = JSON.parse(body);
         console.log(coinInfo);
 
-        var name = Object.keys(coinInfo)[0];
+        const name = Object.keys(coinInfo)[0];
 
-        if(coinInfo[name].thb){
-          var price = coinInfo[name].thb;
+        const price = coinInfo[name][newCur];
         
-          var change = coinInfo[name].thb_24h_change;
-    
-          var vol = coinInfo[name].thb_24h_vol;
-        }else{
-          console.log("use is active");
-        }
+        const change = coinInfo[name][newCur]+_24h_change;
+  
+        const vol = coinInfo[name][newCur]+_24h_vol;
         
-        
-      
-        
-       
-
+  
      if(name=== undefined || price===undefined){
 
       fallBack(sender)
