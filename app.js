@@ -17,11 +17,16 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
+
+  console.log(req.body.events);
+  console.log(req.body.events[0].message);
+  console.log(req.body.events[0].type);
+ 
   
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
- console.log(req.body.events[0]);
+
 
 
 
