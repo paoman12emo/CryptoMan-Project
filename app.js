@@ -30,12 +30,12 @@ app.post('/callback',(req, res) => {
 
 if(status!= "join"){
   const msg = req.body.events[0].message.text;
-  console.log(msg.substring(0,2));
+
 
   if(msg.substring(0,2)==="cm"|| msg.substring(0,2)==="Cm" || msg.substring(0,2)==="CM" || msg.substring(0,2)==="cM"){
     const msg = req.body.events[0].message.text;
     const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
-    console.log("ok");
+   
     let coinName = checkWord(msg);
      
     console.log(coinName);

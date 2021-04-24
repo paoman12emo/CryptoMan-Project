@@ -18,7 +18,7 @@ function changeCoinName(char){
         case "BTC":
           return "Bitcoin";
           break;
-        case "USDT":
+        case "USDT"||"usdt":
           return "Tether";
           break;
           case "ADA":
