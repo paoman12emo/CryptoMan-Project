@@ -26,6 +26,7 @@ app.post('/callback', async (req, res) => {
   const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
    status === "join"&& greeting(groupId);
+  
 
 
 if(status!= "join"){
@@ -36,7 +37,8 @@ if(status!= "join"){
     let coin = msg.split(" ");
     var key = gateCheck(coin[0]);
     console.log(key);
-  }else{
+  }
+  else{
     var key = false;
   }
 

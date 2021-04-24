@@ -17,8 +17,7 @@ function queryCoin(coinName,sender){
       };
       
       request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-  
+       if(!error){
         let coinInfo = JSON.parse(body);
         
         let name = Object.keys(coinInfo)[0];
@@ -30,6 +29,9 @@ function queryCoin(coinName,sender){
         let vol = coinInfo[name].thb_24h_vol;
   
         reply(sender,name,price,change,vol);
+
+       }
+  
       });
 }
 
