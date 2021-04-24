@@ -54,6 +54,7 @@ async function reply(sender,name,price,change,vol) {
                                   "text": "ราคาตอนนี้",
                                   "weight": "bold",
                                   "color": "#424642",
+                                  "flex": 0,
                                   "margin": "sm",
                                   "contents": []
                                 },
@@ -83,7 +84,7 @@ async function reply(sender,name,price,change,vol) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": change+"%",
+                                  "text": change.toFixed(2)+"%",
                                   "size": "sm",
                                   "color": "#C06014",
                                   "align": "end",
@@ -101,11 +102,12 @@ async function reply(sender,name,price,change,vol) {
                                   "text": "มูลค่าตลาด24hr",
                                   "weight": "bold",
                                   "color": "#424642",
+                                  "flex": 0,
                                   "contents": []
                                 },
                                 {
                                   "type": "text",
-                                  "text": vol.toFixed(2)+"฿",
+                                  "text": vol/1000>=1&&vol.toFixed(2)+"K"+" ฿",
                                   "size": "sm",
                                   "color": "#C06014",
                                   "align": "end",
