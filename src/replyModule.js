@@ -12,7 +12,7 @@ function reply(sender,name,price,change,vol) {
                },
                {
                  type: 'text',
-                 text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change + " %"
+                 text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change.toFixed(2) + " %"
                },
                {
                  type: 'text',

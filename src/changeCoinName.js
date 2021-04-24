@@ -28,8 +28,8 @@ function changeCoinName(char){
         case "DOGE":
           return "Dogecoin";
           break;
-          case "GRC":
-          return "Gridcoin";
+          case "AUR":
+          return "Auroracoin";
           break;
         case "XPM":
           return "Primecoin";

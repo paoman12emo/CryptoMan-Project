@@ -21,19 +21,19 @@ function queryCoin(coinName,sender){
         const coinInfo = JSON.parse(body);
         
         const name = Object.keys(coinInfo)[0];
-        console.log(name);
+        
   
         const price = coinInfo[name].thb;
-        console.log(price);
+        
         const change = coinInfo[name].thb_24h_change;
   
         const vol = coinInfo[name].thb_24h_vol;
 
      if(name=== undefined || price===undefined){
-       console.log(1);
+
       fallBack(sender)
      }else{
-      console.log(2);
+      
       reply(sender,name,price,change,vol);
      }
   
