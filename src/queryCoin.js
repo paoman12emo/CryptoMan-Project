@@ -1,7 +1,7 @@
 const {reply} = require("./replyModule.js");
 const request = require('request');
 
-function queryCoin(coinName){
+function queryCoin(coinName,sender){
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',

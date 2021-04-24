@@ -40,7 +40,7 @@ if(status!= "join"){
 
     let coinName = changeCoinName(coin[1])
 
-    await queryCoin(coinName)
+    await queryCoin(coinName,sender)
 
    
   }
