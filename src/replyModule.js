@@ -12,7 +12,7 @@ function reply(sender,name,price,change,vol) {
                to: sender,
                messages: [
                 {
-                  "type": "bubble",
+                  "type": "flex",
                   "header": {
                     "type": "box",
                     "layout": "horizontal",
