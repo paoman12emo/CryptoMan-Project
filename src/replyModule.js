@@ -111,7 +111,7 @@ request({
        request({
                  headers:  {
                    'Content-Type': 'application/json',
-                   'Authorization': 'Bearer 'Bearer {'+process.env.CHANNEL_ACCESS_TOKEN+'.}'
+                   'Authorization': 'Bearer {'+process.env.CHANNEL_ACCESS_TOKEN+'.}'
                },
                  url: 'https://api.line.me/v2/bot/message/push',
                  method: 'POST',
