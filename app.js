@@ -2,8 +2,9 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
 const request = require('request');
-const changeCoinName =  require("./changeCoinName.js");
-const {reply, greeting} = require("./replyModule.js")
+const changeCoinName =  require("./src/changeCoinName.js");
+const {reply, greeting} = require("./src/replyModule.js");
+const queryDF = require("./src/Dialogflow.js");
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -18,7 +19,7 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
-  console.log(req.body.events[0].type);
+  
   const status = req.body.events[0].type;
   const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
@@ -29,6 +30,9 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
+  const x = queryDF(msg)
+
+  console.log(x);
 
   if (msg.substring(0,6) === "ดูราคา"){
     const coin = changeCoinName(msg.substring(6,msg.length));

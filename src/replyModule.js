@@ -44,7 +44,7 @@ function reply(sender,name,price,change,vol) {
             messages: [
               {
             type: 'text',
-            text: "สวัสดี ทุกท่านผมชื่อ CryptoMan ท่านสามารถพิม ดูราคา และตามด้วยชื่อCoinที่ท่านอยากรู้ราคามาได้เลยจ้า(ok)"
+            text: "สวัสดี ทุกท่านผมชื่อ CryptoMan ท่านสามารถพิม ดูราคา และตามด้วยชื่อCoinที่ท่านอยากรู้ราคามาได้เลยจ้า"
             }
           ]
          }
