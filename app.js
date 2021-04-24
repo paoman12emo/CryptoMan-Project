@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
-const {greeting,howTo} = require("./src/replyModule.js");
+const {greeting,howTo,fallBack} = require("./src/replyModule.js");
 const checkWord = require("./src/checkWordOption.js");
 const queryCoin = require("./src/queryCoin.js");
 const changeCoinName = require("./src/changeCoinName");
@@ -32,9 +32,10 @@ if(status!= "join"){
   const msg = req.body.events[0].message.text;
 
 
-  if(msg.substring(0,3).toUpperCase()==="CMT"){
+  if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
     const msg = req.body.events[0].message.text;
     let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
+
    
     let coinName = checkWord(msg);
      
