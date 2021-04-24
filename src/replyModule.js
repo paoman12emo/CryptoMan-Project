@@ -12,7 +12,7 @@ function reply(sender,name,price,change,vol) {
                },
                {
                  type: 'text',
-                 text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change.toFixed(2) + " %"
+                 text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change.toFixed(1) + " %"
                },
                {
                  type: 'text',
@@ -65,5 +65,33 @@ request({
         })
       }    
 
+
+  function howTo(groupId) {
+
+        let body = {
+                   to: groupId,
+                   messages: [
+                     {
+                   type: 'text',
+                   text: "ง่ายๆ พิม cmt ตามด้วยชื่อcoinหรือชื่อเต็มก็ได้"
+                   }
+                 ]
+                }
+         
+       request({
+                 headers:  {
+                   'Content-Type': 'application/json',
+                   'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+               },
+                 url: 'https://api.line.me/v2/bot/message/push',
+                 method: 'POST',
+                 body: body,
+                 json: true
+               }, function (err, res, body) {
+                 if (err) console.log('error')
+                 if (res) console.log('success')
+                 if (body) console.log(body)
+               })
+             }
 
 module.exports = {reply,greeting};
