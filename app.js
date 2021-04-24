@@ -33,18 +33,10 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-  if (/\s/g.test(msg)){
-    let coin = msg.split(" ");
-    var key = gateCheck(coin[0]);
-    console.log(key);
-  }
-  else{
-    var key = false;
-  }
 
-    if(key === true){
+  if(msg.substring(0,1)==="cm" || "CM"){
 
-    let coinName = changeCoinName(msg.split(" ")[1])
+    let coinName = checkWord(msg);
     console.log(coinName);
 
     await queryCoin(coinName,sender)
@@ -56,8 +48,8 @@ if(status!= "join"){
   }else{
     res.sendStatus(200)
   }
-}
-  
+
+  } 
 
 })
 
