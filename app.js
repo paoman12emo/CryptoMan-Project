@@ -33,7 +33,7 @@ if(status!= "join"){
 
 
 
-    const coin = meg.split(" ");
+    const coin = msg.split(" ");
     console.log(coin);
 
 
