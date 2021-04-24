@@ -5,7 +5,7 @@ const request = require('request');
 function queryCoin(coinName,sender,cur){
   
  newCur = cur==="USD"?"USD":"THD";
- console.log(newCur);
+
   
     const options = {
         method: 'GET',
@@ -20,7 +20,7 @@ function queryCoin(coinName,sender,cur){
           useQueryString: true
         }
       };
-      
+      console.log(options);
       request(options, function (err, response, body) {
      try{
         const coinInfo = JSON.parse(body);
