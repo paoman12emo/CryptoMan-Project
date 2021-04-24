@@ -29,7 +29,7 @@ function queryCoin(coinName,sender){
   
         const vol = coinInfo[name].thb_24h_vol;
 
-     if(name==="undefined" || price==="undefined"){
+     if(name=== undefined || price===undefined){
        console.log(1);
       fallBack(sender)
      }else{
