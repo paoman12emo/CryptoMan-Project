@@ -39,13 +39,13 @@ if(status!= "join"){
     let coinName = checkWord(msg);
      
    
-    coinName === "howTo"&& howTo(sender)
+   if( coinName === "howTo"){howTo(sender)
+
+   }else{
+    queryCoin(coinName,sender)
+   }
           
   
-    queryCoin(coinName,sender)
-
- 
-
     res.sendStatus(200)
 
   }else{
