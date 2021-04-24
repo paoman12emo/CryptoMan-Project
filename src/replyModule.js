@@ -42,7 +42,6 @@ async function reply(sender,name,price,change,vol) {
                       "spacing": "none",
                       "margin": "none",
                       "position": "relative",
-                      "height": "50%",
                       "contents": [
                         {
                           "type": "box",
