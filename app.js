@@ -38,7 +38,7 @@ if(status!= "join"){
    
     let coinName = checkWord(msg);
      
-   console.log(coinName.token,coinName.cur.coinName);
+   console.log(coinName.token,coinName.cur,coinName);
 
    if( coinName === "howTo"){
      
