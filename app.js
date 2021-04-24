@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const changeCoinName =  require("./src/changeCoinName.js");
 const {reply, greeting} = require("./src/replyModule.js");
-const queryDF = require("./src/Dialogflow.js");
+
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -30,7 +30,6 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-  const x = queryDF(msg)
 
   console.log(x);
 

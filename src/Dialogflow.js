@@ -1,7 +1,7 @@
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
 
-async function queryDF(message, projectId = 'cryptoman-quba') {
+async function queryDF(message, projectId = 'chef-mu-ynvt') {
     // A unique identifier for the given session
     const sessionId = uuid.v4();
 
