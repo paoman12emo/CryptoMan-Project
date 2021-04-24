@@ -99,7 +99,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": "มูลค่าตลาด24hr",
+                                  "text": " มูลค่าตลาด24hr",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
