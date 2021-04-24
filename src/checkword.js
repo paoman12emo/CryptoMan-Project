@@ -9,7 +9,7 @@ function checkWord(msg){
         return changeCoinName(msg.substring(8,msg.length));
     }
     else{
-        return msg 
+        return changeCoinName(msg) 
     }
 
 }
