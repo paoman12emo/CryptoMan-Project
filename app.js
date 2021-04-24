@@ -34,7 +34,6 @@ if(status!= "join"){
 
   if (/\s/g.test(msg)){
     let coin = msg.split(" ");
-    console.log(coin);
     var key = gateCheck(coin[0]);
     console.log(key);
   }else{
@@ -44,6 +43,7 @@ if(status!= "join"){
     if(key === true){
 
     let coinName = changeCoinName(msg.split(" ")[1])
+    console.log(coinName);
 
     await queryCoin(coinName,sender)
 
