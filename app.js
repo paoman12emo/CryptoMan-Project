@@ -36,7 +36,7 @@ if(status!= "join"){
   if(msg.substring(0,1)==="cm" || "CM"){
     console.log("ok");
     let coinName = checkWord(msg);
-    console.log(coinName);
+    
 
     await queryCoin(coinName,sender)
 
