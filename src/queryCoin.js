@@ -21,6 +21,7 @@ function queryCoin(coinName,sender){
         const coinInfo = JSON.parse(body);
         
         const name = Object.keys(coinInfo)[0];
+        console.log(name);
   
         const price = coinInfo[name].thb;
   
@@ -29,8 +30,10 @@ function queryCoin(coinName,sender){
         const vol = coinInfo[name].thb_24h_vol;
 
      if(name==="undefined"){
+       console.log(1);
       fallBack(sender)
      }else{
+      console.log(2);
       reply(sender,name,price,change,vol);
      }
   
