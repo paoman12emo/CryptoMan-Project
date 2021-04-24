@@ -6,8 +6,7 @@ function checkWord(msg){
         return changeCoinName(msg.substring(6,msg.length));
     }
     else if(msg.substring(0,6) === "ดูราคา "){
-        return changeCoinName(msg.substring(7,msg.length));
-        console.log(changeCoinName(msg.substring(7,msg.length)));
+        return changeCoinName(msg.split(" "));  
     }
     else{
         return changeCoinName(msg) 
