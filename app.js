@@ -31,6 +31,7 @@ if(status!= "join"){
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
     const coin = checkWord(msg);
+    console.log(coin);
 
 
     const options = {
@@ -65,13 +66,9 @@ if(status!= "join"){
     });
   }
   
- 
-  
 
   res.sendStatus(200)
 
-  
-  
 })
 
 
