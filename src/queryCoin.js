@@ -4,7 +4,7 @@ const request = require('request');
 
 function queryCoin(coinName,sender,cur){
   
- newCur = cur==="USD"?"USD":"THD";
+ newCur = cur==="USD"?"usd":"thb";
 
   
     const options = {
