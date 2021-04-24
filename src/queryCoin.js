@@ -31,9 +31,9 @@ function queryCoin(coinName,sender){
 
         if(price/1000>=1){
           if(price/1000000>=1){
-            var newPrice= price+"M"
+            var newPrice= price/1000+"M"
           }else{
-            var newPrice= price+"k"
+            var newPrice= price/1000000+"k"
           }
         }
        
@@ -43,7 +43,7 @@ function queryCoin(coinName,sender){
       fallBack(sender)
      }else{
       
-      reply(sender,newPrice,price,change,vol);
+      reply(sender,name,newPrice,change,vol);
      }
   
        }
