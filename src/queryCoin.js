@@ -1,6 +1,6 @@
 const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
-let key = config.SECRET_API_KEY;
+
 
 function queryCoin(coinName,sender){
     const options = {
