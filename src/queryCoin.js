@@ -1,5 +1,6 @@
 const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
+let key = config.SECRET_API_KEY;
 
 function queryCoin(coinName,sender){
     const options = {
@@ -10,7 +11,7 @@ function queryCoin(coinName,sender){
              include_24hr_vol: 'true'
              },
         headers: {
-          'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
+          'x-rapidapi-key': key,
           'x-rapidapi-host': 'coingecko.p.rapidapi.com',
           useQueryString: true
         }
