@@ -17,6 +17,7 @@ let msg = char.replace(/\s/g, '');
     }
     else if(msg.substring(3,11) === "ใช้ยังไง"){
         howTo(sender);  
+        break;
     }     
     else{
         return changeCoinName(msg.substring(3,msg.length)) 
