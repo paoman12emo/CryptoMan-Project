@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 
 //Message
 
-app.post('/callback', async (req, res) => {
+app.post('/callback',(req, res) => {
   
   const status = req.body.events[0].type;
   const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
@@ -38,7 +38,7 @@ if(status!= "join"){
     let coinName = checkWord(msg);
     
 
-    await queryCoin(coinName,sender)
+     queryCoin(coinName,sender)
 
  
 
