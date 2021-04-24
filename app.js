@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const request = require('request');
 const {reply, greeting} = require("./src/replyModule.js");
-const checkWord = require("./src/checkword.js");
+const checkWord = require("./src/checkWordOption.js");
 
 
 const app = express();
@@ -30,7 +30,10 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-    const coin = checkWord(msg);
+
+
+
+    const coin = meg.split(" ");
     console.log(coin);
 
 
