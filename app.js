@@ -31,13 +31,13 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-    const coin = msg.split(" ");
+    let coin = msg.split(" ");
 
-    const key = gateCheck(coin[0]);
+    let key = gateCheck(coin[0]);
 
     if(key= true){
 
-    const coinName = changeCoinName(coin[1])
+    let coinName = changeCoinName(coin[1])
 
     await queryCoin(coinName)
 
