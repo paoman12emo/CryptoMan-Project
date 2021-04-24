@@ -2,9 +2,10 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
 const {greeting} = require("./src/replyModule.js");
-const gateCheck = require("./src/gate.js")
+const gateCheck = require("./src/gate.js");
 const checkWord = require("./src/checkWordOption.js");
-const queryCoin = require("./src/queryCoin.js")
+const queryCoin = require("./src/queryCoin.js");
+const changeCoinName = require("./src/changeCoinName");
 
 
 const app = express();
