@@ -3,21 +3,21 @@ const changeCoinName =  require("./changeCoinName.js");
 
 function checkWord(char){
 
+let msg = char.toUpperCase();
 
-let msg = char.replace(/\s/g, '');
 
-    if(msg.substring(3,9) === "ดูราคา"){
+    if(msg.includes('CMTดูราคา')){
         return changeCoinName(msg.substring(9,msg.length)); 
     }
-    else if(msg.substring(3,5) === "ดู"){
+    else if(msg.includes('CMTดู')){
         return changeCoinName(msg.substring(5,msg.length));  
         } 
-    else if(msg.substring(3,7) === "ราคา"){
+    else if(msg.includes('CMTราคา')){
         return changeCoinName(msg.substring(7,msg.length));  
     }
-    else if(msg.substring(3,11) === "ใช้ยังไง"){
+    else if(msg.includes('CMTใช้ยังไง')){
         return "howTo"
-    }     
+    }   
     else{
         return changeCoinName(msg.substring(3,msg.length)) 
         }

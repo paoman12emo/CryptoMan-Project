@@ -1,3 +1,3 @@
-let msg = "cmtใช้ยังไง"
+let msg = "cmtEHNdเป็นus"
 
-console.log(msg.substring(3,11));
+console.log(msg.includes('เป็นus'));

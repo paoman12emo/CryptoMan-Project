@@ -28,8 +28,10 @@ app.post('/callback',(req, res) => {
 
 
 if(status!= "join"){
-  const msg = req.body.events[0].message.text;
+  const char = req.body.events[0].message.text;
 
+  let msg = char.replace(/\s/g, '');
+    
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
     const msg = req.body.events[0].message.text;
@@ -39,7 +41,9 @@ if(status!= "join"){
     let coinName = checkWord(msg);
      
    
-   if( coinName === "howTo"){howTo(sender)
+   if( coinName === "howTo"){
+     
+    howTo(sender)
 
    }else{
     queryCoin(coinName,sender)
