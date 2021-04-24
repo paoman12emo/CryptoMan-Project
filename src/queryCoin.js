@@ -3,11 +3,7 @@ const request = require('request');
 
 
 function queryCoin(coinName,sender,cur){
-  if(cur==="USD"){
-    var newCur = "usd"
-  }else{
-    var newCur = "thb"
-  }
+  let newCur = cur==="USD"?"usd":"thb"
  
   console.log(newCur);
     const options = {
@@ -31,7 +27,7 @@ function queryCoin(coinName,sender,cur){
         
         const name = Object.keys(coinInfo)[0];
       
-        const price = coinInfo[name].newCur;
+        const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
         
         const change = coinInfo[name].thb_24h_change;
   
