@@ -9,13 +9,13 @@ function changeCoinName(char){
         case "ETH":
           return "Ethereum";
           break;
-          case "BNB":
-            return "Binance";
-            break;
-          case "Binance Coin":
-            return "Binance";
-            break;
-            case "BTC":
+        case "BNB":
+          return "Binancecoin";
+          break;
+        case "Binance Coin":
+          return "Binancecoin";
+          break;
+        case "BTC":
           return "Bitcoin";
           break;
         case "USDT":
