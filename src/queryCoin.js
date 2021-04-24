@@ -25,13 +25,13 @@ function queryCoin(coinName,sender,cur){
         const coinInfo = JSON.parse(body);
         console.log(coinInfo);
 
-        const name = Object.keys(coinInfo)[0];
+        const name = Object.keys(coinInfo)[0]; //fix
 
         const price = coinInfo[name][newCur];
         
-        const change = coinInfo[name][newCur]+_24h_change;
+        const change = coinInfo[name][newCur]+"_24h_change";
   
-        const vol = coinInfo[name][newCur]+_24h_vol;
+        const vol = coinInfo[name][newCur]+"_24h_vol";
         
   
      if(name=== undefined || price===undefined){
