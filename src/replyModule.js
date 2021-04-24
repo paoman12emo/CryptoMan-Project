@@ -98,14 +98,14 @@ function reply(sender,name,price,change,vol) {
                               "weight": "regular",
                               "size": "md",
                               "color": "#C06014",
-                              "align": "end",
+                              "align": "start",
                               "contents": []
                             },
                             {
                               "type": "text",
                               "text": change.toFixed(2)+"%",
                               "weight": "regular",
-                              "size": "md",
+                              "size": "start",
                               "color": "#C06014",
                               "align": "end",
                               "contents": []
@@ -116,7 +116,7 @@ function reply(sender,name,price,change,vol) {
                               "weight": "regular",
                               "size": "md",
                               "color": "#C06014",
-                              "align": "end",
+                              "align": "start",
                               "contents": []
                             }
                           ]
