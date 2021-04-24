@@ -33,8 +33,6 @@ app.post('/callback',(req, res) => {
   let msg = char.replace(/\s/g, '');
 
 if(status!= "join"){
-  
-    
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
    
@@ -45,7 +43,13 @@ if(status!= "join"){
      
     howTo(sender)
 
-   }else{
+   }
+
+   else if(coinName.cur){
+    queryCoin(coinName.token,sender,coinName.cur);
+   }
+   
+   else{
     queryCoin(coinName,sender)
    }
           

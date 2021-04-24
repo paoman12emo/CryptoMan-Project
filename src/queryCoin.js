@@ -2,11 +2,11 @@ const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
 
 
-function queryCoin(coinName,sender){
+function queryCoin(coinName,sender,cur){
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
-        qs: {ids: coinName, vs_currencies: 'THB',
+        qs: {ids: coinName, vs_currencies: cur==="USD"?"USD":'THB',
              include_24hr_change: 'true',
              include_24hr_vol: 'true'
              },

@@ -1,9 +1,3 @@
-price = 8000000
-
-if(price/1000>=1){
-    if(price/1000000>=1){
-     console.log(price/1000000 +"M")
-    }else{
-      console.log(price/1000 +"k")
-    }
-  }
+msg = "CMTETHUSD"
+let coin = msg.replace("USD","").substring(3,msg.length)
+console.log([coin,"USD"]);
