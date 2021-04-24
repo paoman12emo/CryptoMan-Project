@@ -30,7 +30,7 @@ app.post('/callback',(req, res) => {
 
 if(status!= "join"){
   const msg = req.body.events[0].message.text;
-  console.log(msg.substring(0,1));
+  console.log(msg.substring(0,2));
 
   if(msg.substring(0,2)==="cm"|| "cM" || "CM" || "Cm"){
     const msg = req.body.events[0].message.text;
