@@ -31,7 +31,7 @@ function reply(sender,name,price,change,vol) {
                           "contents": [
                             {
                               "type": "text",
-                              "text": name,
+                              "text": name.toUpperCase(),
                               "size": "4xl",
                               "color": "#536162",
                               "contents": []
