@@ -23,7 +23,7 @@ async function reply(sender,name,price,change,vol) {
                       "contents": [
                         {
                           "type": "text",
-                          "text": name.toUpperCase(),
+                          "text": name.toUpperCase()+" 💰",
                           "size": "3xl",
                           "color": "#536162",
                           "contents": []
