@@ -37,7 +37,8 @@ if(status!= "join"){
     const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
     console.log("ok");
     let coinName = checkWord(msg);
-    
+     
+    console.log(coinName);
 
      queryCoin(coinName,sender)
 
