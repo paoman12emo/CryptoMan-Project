@@ -5,8 +5,8 @@ function checkWord(msg){
     if(msg.substring(0,6) === "ดูราคา"){
         return changeCoinName(msg.substring(6,msg.length));
     }
-    else if(msg.substring(0,7) === "ดูราคา "){
-        return changeCoinName(msg.substring(8,msg.length));
+    else if(msg.substring(0,6) === "ดูราคา "){
+        return changeCoinName(msg.substring(7,msg.length));
     }
     else{
         return changeCoinName(msg) 
