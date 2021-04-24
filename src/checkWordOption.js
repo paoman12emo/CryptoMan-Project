@@ -23,7 +23,7 @@ try{
     }    
     else if(msg.includes('USD')){
         let coin = msg.replace("USD","").substring(3,msg.length);
-        return {token:coin,Cur:"USD"};
+        return {token:coin,cur:"USD"};
     }
     else{
         return changeCoinName(msg.substring(3,msg.length)) 
