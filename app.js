@@ -20,9 +20,9 @@ app.use(bodyParser.json())
 app.post('/callback', (req, res) => {
   console.log(req.body.events[0].type);
   const status = req.body.events[0].type;
-  const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
+  // const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
-   status === "join"&& greeting(groupId);
+  //  status === "join"&& greeting(groupId);
 
 
 if(!status){

@@ -34,10 +34,10 @@ function reply(sender,name,price,change,vol) {
            })
          }
 
- function greeting() {
+ function greeting(groupId) {
 
  let body = {
-            to: sender,
+            to: groupId,
             messages: [
               {
             type: 'text',
