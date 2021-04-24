@@ -3,10 +3,11 @@ const request = require('request');
 
 
 function queryCoin(coinName,sender,cur){
+  let currency = cur.toLowerCase();
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
-        qs: {ids: coinName, vs_currencies: cur==="USD"?"USD":'THB',
+        qs: {ids: coinName, vs_currencies: cur==="usd"?"USD":'THB',
              include_24hr_change: 'true',
              include_24hr_vol: 'true'
              },
@@ -23,7 +24,7 @@ function queryCoin(coinName,sender,cur){
         
         const name = Object.keys(coinInfo)[0];
       
-        const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
+        const price = coinInfo[name].currency;
         
         const change = coinInfo[name].thb_24h_change;
   
