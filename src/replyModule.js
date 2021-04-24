@@ -3,7 +3,7 @@ require('dotenv').config({path: __dirname + '/.env'});
 const request = require('request');
 
 
-let token = config.CHANNEL_ACCESS_TOKEN;
+
 
 function reply(sender,name,price,change,vol) {
 
