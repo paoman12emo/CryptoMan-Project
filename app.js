@@ -38,7 +38,6 @@ if(status!= "join"){
    
     let coinName = checkWord(msg);
      
-   console.log(coinName.token,coinName.cur,coinName);
 
    if( coinName === "howTo"){
      
@@ -47,7 +46,7 @@ if(status!= "join"){
    }
 
    else if(coinName.cur){
-     console.log(ok);
+     console.log("ok");
     queryCoin(coinName.token,sender,coinName.cur);
    }
    
