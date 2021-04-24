@@ -34,10 +34,6 @@ if(status!= "join"){
     
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
-    const msg = req.body.events[0].message.text;
-    let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
-
-   let msg = char.replace(/\s/g, '');
    
     let coinName = checkWord(msg);
      
