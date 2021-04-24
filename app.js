@@ -32,7 +32,7 @@ if(status!= "join"){
   const msg = req.body.events[0].message.text;
   console.log(msg.substring(0,1));
 
-  if(msg.substring(0,1)==="cm"){
+  if(msg.substring(0,2)==="cm"|| "cM" || "CM" || "Cm"){
     const msg = req.body.events[0].message.text;
     const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
     console.log("ok");
