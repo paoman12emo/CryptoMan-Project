@@ -30,9 +30,7 @@ function queryCoin(coinName,sender){
   
         reply(sender,name,price,change,vol);
 
-       }else(
-        fallBack(sender)
-       )
+       }
   
       });
 }
