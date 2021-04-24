@@ -18,11 +18,13 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
+  console.log(req.body.events[0].type);
   const status = req.body.events[0].type;
+  const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
-   status === "join"&& greeting();
+   status === "join"&& greeting(groupId);
 
-   
+
 if(!status){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
