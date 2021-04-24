@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const request = require('request');
 const changeCoinName =  require("./changeCoinName.js");
+const {reply, greeting} = require("./replyModule.js")
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -17,19 +18,14 @@ app.use(bodyParser.json())
 //Message
 
 app.post('/callback', (req, res) => {
+  const status = req.body.events[0].type;
 
-  console.log(req.body.events);
-  console.log(req.body.events[0].message);
-  console.log(req.body.events[0].type);
- 
-  
+   status === "join"&& greeting();
+
+   
+if(!status){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
-
-
-
-
-
 
 
   if (msg.substring(0,6) === "ดูราคา"){
@@ -71,43 +67,11 @@ app.post('/callback', (req, res) => {
   
 
   res.sendStatus(200)
+}
+  
+  
 })
 
-function reply(sender,name,price,change,vol) {
-
- let body = {
-            to: sender,
-            messages: [
-              {
-            type: 'text',
-            text: name + "ราคาตอนนี้คือ " + price + " บาท"
-            },
-            {
-              type: 'text',
-              text: "ภายใน 24 ชั่วโมงปรับตัวไป " + change.toFixed(2) + " %"
-            },
-            {
-              type: 'text',
-              text: "ปริมาณการซื้อค้าภายใน 24 ชั่วโมง " + vol + " บาท"
-            }
-          ]
-         }
-  
-request({
-          headers:  {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
-        },
-          url: 'https://api.line.me/v2/bot/message/push',
-          method: 'POST',
-          body: body,
-          json: true
-        }, function (err, res, body) {
-          if (err) console.log('error')
-          if (res) console.log('success')
-          if (body) console.log(body)
-        })
-      }
 
 
 
