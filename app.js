@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
-const request = require('request');
-const {reply, greeting} = require("./src/replyModule.js");
+const {greeting} = require("./src/replyModule.js");
+const gateCheck = require("./src/gate.js")
 const checkWord = require("./src/checkWordOption.js");
+const queryCoin = require("./src/queryCoin.js")
 
 
 const app = express();
@@ -18,7 +19,7 @@ app.use(bodyParser.json())
 
 //Message
 
-app.post('/callback', (req, res) => {
+app.post('/callback', async (req, res) => {
   
   const status = req.body.events[0].type;
   const groupId = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
@@ -30,47 +31,23 @@ if(status!= "join"){
   let msg = req.body.events[0].message.text;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
-
-
-
     const coin = msg.split(" ");
-    console.log(coin);
 
+    const key = gateCheck(coin[0]);
 
-    const options = {
-      method: 'GET',
-      url: 'https://coingecko.p.rapidapi.com/simple/price',
-      qs: {ids: coin, vs_currencies: 'THB',
-           include_24hr_change: 'true',
-           include_24hr_vol: 'true'
-           },
-      headers: {
-        'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
-        'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-        useQueryString: true
-      }
-    };
-    
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
+    if(key= true){
 
-      let coinInfo = JSON.parse(body);
-      console.log(coinInfo);
-      
-      let name = Object.keys(coinInfo)[0];
+    const coinName = changeCoinName(coin[1])
 
-      let price = coinInfo[name].thb;
+    await queryCoin(coinName)
 
-      let change = coinInfo[name].thb_24h_change;
-
-      let vol = coinInfo[name].thb_24h_vol;
-
-      reply(sender,name,price,change,vol);
-    });
+   
   }
   
 
   res.sendStatus(200)
+
+}
 
 })
 
