@@ -1,3 +1,4 @@
-let msg = "cmtEHNdเป็นus"
+require('dotenv').config();
+ const x = process.env.CHANNEL_ACCESS_TOKEN
 
-console.log(msg.includes('เป็นus'));
+console.log(typeof('Bearer {'+process.env.CHANNEL_ACCESS_TOKEN+'.}'));
