@@ -17,103 +17,101 @@ async function reply(sender,name,price,change,vol) {
                     "type": "bubble",
                     "header": {
                       "type": "box",
-                      "layout": "horizontal",
-                      "margin": "none",
+                      "layout": "vertical",
+                      "flex": 0,
                       "backgroundColor": "#F3F4ED",
                       "contents": [
                         {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": name.toUpperCase(),
-                              "size": "4xl",
-                              "color": "#536162",
-                              "contents": []
-                            }
-                          ]
+                          "type": "text",
+                          "text": name,
+                          "size": "3xl",
+                          "color": "#536162",
+                          "contents": []
                         }
                       ]
                     },
                     "body": {
                       "type": "box",
                       "layout": "vertical",
-                      "spacing": "none",
-                      "margin": "none",
-                      "position": "relative",
+                      "spacing": "md",
+                      "action": {
+                        "type": "uri",
+                        "label": "Action",
+                        "uri": "https://linecorp.com"
+                      },
                       "contents": [
                         {
                           "type": "box",
                           "layout": "vertical",
+                          "spacing": "sm",
                           "contents": [
                             {
-                              "type": "text",
-                              "text": "ราคาตอนนี้",
-                              "weight": "bold",
-                              "size": "md",
-                              "color": "#424642",
-                              "align": "start",
-                              "gravity": "top",
-                              "margin": "none",
-                              "style": "normal",
-                              "contents": []
+                              "type": "box",
+                              "layout": "baseline",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "ราคาตอนนี้",
+                                  "weight": "bold",
+                                  "color": "#424642",
+                                  "margin": "sm",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "text",
+                                  "text": price.toFixed(2)+"฿",
+                                  "size": "sm",
+                                  "color": "#C06014",
+                                  "align": "end",
+                                  "contents": []
+                                }
+                              ]
                             },
                             {
-                              "type": "text",
-                              "text": "ปรับตัวใน24hr",
-                              "weight": "bold",
-                              "size": "md",
-                              "color": "#424642",
-                              "align": "start",
-                              "contents": []
+                              "type": "box",
+                              "layout": "baseline",
+                              "spacing": "sm",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "ภายใน24hrปรับตัว",
+                                  "weight": "bold",
+                                  "color": "#424642",
+                                  "flex": 0,
+                                  "margin": "sm",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "text",
+                                  "text": change+"%",
+                                  "size": "sm",
+                                  "color": "#C06014",
+                                  "align": "end",
+                                  "contents": []
+                                }
+                              ]
                             },
                             {
-                              "type": "text",
-                              "text": "มูลค่าภายใน24hr",
-                              "weight": "bold",
-                              "size": "md",
-                              "color": "#424642",
-                              "align": "start",
-                              "contents": []
-                            }
-                          ]
-                        },
-                        {
-                          "type": "box",
-                          "layout": "vertical",
-                          "spacing": "none",
-                          "margin": "none",
-                          "position": "absolute",
-                          "offsetBottom": "15%",
-                          "offsetStart": "60%",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": price +"บาท",
-                              "weight": "regular",
-                              "size": "sm",
-                              "color": "#C06014",
-                              "align": "start",
-                              "contents": []
-                            },
-                            {
-                              "type": "text",
-                              "text": change.toFixed(2)+"%",
-                              "weight": "regular",
-                              "size": "sm",
-                              "color": "#C06014",
-                              "align": "start",
-                              "contents": []
-                            },
-                            {
-                              "type": "text",
-                              "text": vol+"บาท",
-                              "weight": "regular",
-                              "size": "sm",
-                              "color": "#C06014",
-                              "align": "start",
-                              "contents": []
+                              "type": "box",
+                              "layout": "baseline",
+                              "spacing": "sm",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "มูลค่าตลาด24hr",
+                                  "weight": "bold",
+                                  "color": "#424642",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "text",
+                                  "text": vol.toFixed(2)+"฿",
+                                  "size": "sm",
+                                  "color": "#C06014",
+                                  "align": "end",
+                                  "contents": []
+                                }
+                              ]
                             }
                           ]
                         }
@@ -126,7 +124,7 @@ async function reply(sender,name,price,change,vol) {
                       "contents": [
                         {
                           "type": "spacer",
-                          "size": "md"
+                          "size": "xxl"
                         }
                       ]
                     }
