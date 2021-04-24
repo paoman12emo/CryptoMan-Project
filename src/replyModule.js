@@ -1,14 +1,11 @@
-require('dotenv').config({path: __dirname + '/.env'});
+const cal = require("./Calculate.js")
 
 const request = require('request');
 
 
 
 
-function reply(sender,name,price,change,vol) {
-
-  
- 
+async function reply(sender,name,price,change,vol) {
 
 
     let body = {
@@ -94,7 +91,7 @@ function reply(sender,name,price,change,vol) {
                           "contents": [
                             {
                               "type": "text",
-                              "text": price +"บาท",
+                              "text": await cal(price) +"บาท",
                               "weight": "regular",
                               "size": "md",
                               "color": "#C06014",
@@ -112,7 +109,7 @@ function reply(sender,name,price,change,vol) {
                             },
                             {
                               "type": "text",
-                              "text": vol+"บาท",
+                              "text": await cal(vol)+"บาท",
                               "weight": "regular",
                               "size": "md",
                               "color": "#C06014",

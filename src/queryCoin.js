@@ -28,14 +28,6 @@ function queryCoin(coinName,sender){
         const change = coinInfo[name].thb_24h_change;
   
         const vol = coinInfo[name].thb_24h_vol;
-
-        if(price/1000>=1){
-          if(price/1000000>=1){
-            var newPrice= price/1000+"M"
-          }else{
-            var newPrice= price/1000000+"k"
-          }
-        }
        
 
      if(name=== undefined || price===undefined){
@@ -43,7 +35,7 @@ function queryCoin(coinName,sender){
       fallBack(sender)
      }else{
       
-      reply(sender,name,newPrice,change,vol);
+      reply(sender,name,price,change,vol);
      }
   
        }
