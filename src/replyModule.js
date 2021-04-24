@@ -94,4 +94,4 @@ request({
                })
              }
 
-module.exports = {reply,greeting};
+module.exports = {reply,greeting,howTo};

@@ -1,5 +1,5 @@
 const changeCoinName =  require("./changeCoinName.js");
-const howTo = require("./replyModule.js");
+const {howTo} = require("./replyModule.js");
 
 function checkWord(char,sender){
 
