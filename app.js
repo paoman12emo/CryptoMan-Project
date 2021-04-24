@@ -29,11 +29,13 @@ app.post('/callback',(req, res) => {
 
 
 if(status!= "join"){
-  let msg = req.body.events[0].message.text;
-  let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
+  const msg = req.body.events[0].message.text;
+  const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
 
 
   if(msg.substring(0,1)==="cm" || "CM" || "Cm"){
+    const msg = req.body.events[0].message.text;
+    const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId
     console.log("ok");
     let coinName = checkWord(msg);
     
