@@ -23,7 +23,7 @@ function queryCoin(coinName,sender,cur){
         
         const name = Object.keys(coinInfo)[0];
       
-        const price = coinInfo[name].thb;
+        const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
         
         const change = coinInfo[name].thb_24h_change;
   
