@@ -24,12 +24,12 @@ function queryCoin(coinName,sender){
         console.log(name);
   
         const price = coinInfo[name].thb;
-  
+        console.log(price);
         const change = coinInfo[name].thb_24h_change;
   
         const vol = coinInfo[name].thb_24h_vol;
 
-     if(name==="undefined"){
+     if(name==="undefined" || price==="undefined"){
        console.log(1);
       fallBack(sender)
      }else{
