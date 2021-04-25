@@ -6,9 +6,7 @@ const request = require('request');
 
 async function reply(sender,name,price,change,vol) {
 
-  console.log(name==="binancecoin"?"https://coinmarketcap.com/currencies/binance-coin/":"https://coinmarketcap.com/currencies/"+name+"/");
-  console.log(name);
- 
+
     let body = {
                to: sender,
                messages: [
@@ -53,7 +51,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": "ราคาตอนนี้",
+                                  "text": "Last Price",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
@@ -77,7 +75,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": "ภายใน24hrปรับตัว",
+                                  "text": "24h Change",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
@@ -101,7 +99,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": " มูลค่าตลาด24hr",
+                                  "text": " 24h vol",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
