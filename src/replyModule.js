@@ -6,7 +6,7 @@ const request = require('request');
 
 async function reply(sender,name,price,change,vol) {
 
-  console.log(name==="BINANCECOIN"?"https://coinmarketcap.com/currencies/binance-coin/":"https://coinmarketcap.com/currencies/"+name+"/");
+  console.log(name==="binancecoin"?"https://coinmarketcap.com/currencies/binance-coin/":"https://coinmarketcap.com/currencies/"+name+"/");
   console.log(name);
  
     let body = {
