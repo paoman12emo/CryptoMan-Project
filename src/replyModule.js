@@ -137,7 +137,7 @@ async function reply(sender,name,price,change,vol) {
                           },
                           "color": "#98DDCA",
                           "gravity": "bottom",
-                          "offsetBottom": "20%"
+                          "style": "primary"
                         }
                       ]
                     }

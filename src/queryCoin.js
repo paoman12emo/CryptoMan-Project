@@ -23,8 +23,8 @@ function queryCoin(coinName,sender,cur){
       console.log(options);
       request(options, function (err, response, body) {
      try{
-        const coinInfo = JSON.parse(body);
-        console.log(body);
+        const coinInfo = JSON.parse(body);//usd no fix
+        
 
         const name = Object.keys(coinInfo)[0]; 
 
