@@ -99,7 +99,7 @@ async function reply(sender,name,price,change,vol) {
                               "contents": [
                                 {
                                   "type": "text",
-                                  "text": " 24h vol",
+                                  "text": " 24h Vol",
                                   "weight": "bold",
                                   "color": "#424642",
                                   "flex": 0,
