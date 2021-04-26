@@ -272,7 +272,7 @@ request({
                                   "contents": [
                                     {
                                       "type": "text",
-                                      "text": "Crypto News 📰",
+                                      "text": "📰 Crypto News 📰",
                                       "weight": "bold",
                                       "size": "xl",
                                       "color": "#2D315BFF",
