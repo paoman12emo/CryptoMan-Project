@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
 
-
-
 const coinSchema = mongoose.Schema({
     coinFullName:String,
     coinShortName:String,

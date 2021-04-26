@@ -8,7 +8,7 @@ useNewUrlParser: true, useUnifiedTopology: true
 
 function checkCoin(coin){
     console.log(coin);
-    Coin.find({coinShortName:coin},(err, res)=>{
+    Coin.find({coinShortName:"BTC"},(err, res)=>{
         console.log(res);
     });
 }
