@@ -1,5 +1,6 @@
 const queryName = require("./MongoQuery.js")
 const {howTo,fallBack} = require("./replyModule.js");
+const getNews = require("./news.js");
 
 function checkWord(char,sender){
 
@@ -21,9 +22,9 @@ try{
     else if(msg.includes('CMU')){
         queryName(msg.substring(3,msg.length),sender,"USD");
     } 
-    // else if(msg.includes('CMTC')){
-    //     return  function compare 2 coin
-    // }    
+    else if(msg.includes('CMTNEWS')){
+        getNews(sender)
+    }    
     else{
         queryName(msg.substring(3,msg.length),sender,"THB");
         }

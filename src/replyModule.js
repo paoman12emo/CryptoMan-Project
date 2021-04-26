@@ -246,5 +246,178 @@ request({
                  if (err) console.log('error')
                  if (res) console.log('success')
                })
-             }
-module.exports = {reply,greeting,howTo,fallBack};
+              }
+  function reportNews(sender,newsLists) {
+    console.log(newsLists);
+
+    let news_1 = newsLists[0]
+    let news_2 = newsLists[1]
+    let news_3 = newsLists[2]
+    let news_4 = newsLists[3]
+    let news_5 = newsLists[4]
+
+
+
+                let body = {
+                           to: sender,
+                           messages: [
+                            {
+                              "type": "flex",
+                              "altText": "This is a Flex Message",
+                              "contents":{
+                                "type": "bubble",
+                                "header": {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "backgroundColor": "#32C2CEFF",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "Crypto News",
+                                      "weight": "bold",
+                                      "size": "xl",
+                                      "color": "#2D315BFF",
+                                      "align": "center",
+                                      "contents": []
+                                    }
+                                  ]
+                                },
+                                "hero": {
+                                  "type": "image",
+                                  "url": "https://mone.to/wp-content/uploads/2019/08/Bitcoin-Blockchain-and-Cryptocurrency-News-720x481.jpg",
+                                  "size": "full",
+                                  "aspectRatio": "20:13",
+                                  "aspectMode": "cover",
+                                  "action": {
+                                    "type": "uri",
+                                    "label": "Action",
+                                    "uri": "https://www.coingecko.com/th/news"
+                                  }
+                                },
+                                "body": {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "spacing": "md",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "flex": 2,
+                                      "contents": [
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": news_1.text,
+                                            "uri": news_1.url
+                                          },
+                                          "color": "#FFFFFFFF",
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        },
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": news_2.text,
+                                            "uri": news_2.url
+                                          },
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        },
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": news_3.text,
+                                            "uri": news_3.url
+                                          },
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        },
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": news_4.text,
+                                            "uri": news_4.url
+                                          },
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        },
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": news_5.text,
+                                            "uri": news_5.url
+                                          },
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "footer": {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "contents": [
+                                    {
+                                      "type": "button",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "More News",
+                                        "uri": "https://www.coingecko.com/th/news"
+                                      },
+                                      "color": "#499C98FF",
+                                      "style": "primary"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                         ]
+                        }
+                 
+               request({
+                         headers:  {
+                           'Content-Type': 'application/json',
+                           'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+                       },
+                         url: 'https://api.line.me/v2/bot/message/push',
+                         method: 'POST',
+                         body: body,
+                         json: true
+                       }, function (err, res, body) {
+                         if (err) console.log('error')
+                         if (res) console.log('success')
+                       })
+                     }
+            
+
+
+
+
+
+module.exports = {reply,greeting,howTo,fallBack,reportNews};
