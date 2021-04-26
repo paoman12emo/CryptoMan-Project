@@ -18,7 +18,7 @@ let coin = Coin.find({coinShortName: name},(err,res)=>{
   return res[0].coinFullName;
 })
 console.log(coin);
-return coin
+// return coin
 }
 catch(err){
   console.log(err);
