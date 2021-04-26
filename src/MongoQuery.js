@@ -19,7 +19,11 @@ const {fallBack} = require("./replyModule.js");
 
   Coin.find({coinShortName : name},(err,res)=>{
     let coinData = res[0];
-    if(name===coinData.coinShortName){
+    console.log(coinData.coinShortName);
+    if(coinData.coinShortName==undefined){
+      fallBack(sender)
+    }
+     else if(name===coinData.coinShortName){
       
       queryCoin(coinData.coinFullName,sender,coinData.URL,cur)
     }else{
@@ -32,7 +36,6 @@ const {fallBack} = require("./replyModule.js");
 
 }
 catch(err){
-  fallBack(sender)
   console.log(err);
 }
 }
