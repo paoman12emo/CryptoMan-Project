@@ -1,5 +1,5 @@
 const changeCoinName =  require("./changeCoinName.js");
-
+const queryCoin = require("./MongoQuery.js")
 
 
 function checkWord(char){
@@ -27,9 +27,8 @@ try{
         return {token:coin,cur:"USD"};
     }
     else{
-        return changeCoinName(msg.substring(3,msg.length))
+        return queryCoin(msg.substring(3,msg.length))
         }
-        // queryName(msg.substring(3,msg.length))
     }
     catch(err){
         console.log(err);

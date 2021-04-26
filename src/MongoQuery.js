@@ -13,9 +13,10 @@ const Coin = require("./Model/Model.js");
   console.log(name);
 
 Coin.find({coinShortName: name},(err,res)=>{
-  console.log(res[0].coinFullName);
+  return (res[0].coinFullName);
 })
 
 }
 
-queryCoin("BTC")
+
+module.exports= queryCoin;
