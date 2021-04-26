@@ -4,8 +4,9 @@ const request = require('request');
 
 
 
-async function reply(sender,name,price,change,vol,url) {
+async function reply(sender,name,price,change,vol,url,cur) {
 
+  console.log(cur);
 
     let body = {
                to: sender,

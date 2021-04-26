@@ -2,13 +2,13 @@ const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
 
 
-function queryCoin(coinName,sender,url){
-  
+function queryCoin(coinName,sender,url,cur){
+  try{  
 
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
-        qs: {ids: coinName, vs_currencies:"THB",
+        qs: {ids: coinName, vs_currencies: cur,
              include_24hr_change: 'true',
              include_24hr_vol: 'true'
              },
@@ -20,34 +20,38 @@ function queryCoin(coinName,sender,url){
       };
       
       request(options, function (err, response, body) {
-     try{
+    
         const coinInfo = JSON.parse(body);//usd no fix
         console.log(coinInfo);
 
+     
         const name = Object.keys(coinInfo)[0]; 
 
-        const price = coinInfo[name].thb;
+        const price = cur="THB"?coinInfo[name].thb:coinInfo[name].usd;
         
-        const change = coinInfo[name].thb_24h_change
+        const change = cur="THB"?coinInfo[name].thb_24h_change:coinInfo[name].usd_24h_change;
   
-        const vol = coinInfo[name].thb_24h_vol
-        
-  
+        const vol = cur="THB"?coinInfo[name].thb_24h_vol:coinInfo[name].usd_24h_vol;
+      
+ 
      if(name=== undefined || price===undefined){
 
       fallBack(sender)
      }else{
       
-      reply(sender,name,price,change,vol,url);
+      reply(sender,name,price,change,vol,url,cur);
      }
   
-       }
-    catch(err){
-      console.log(err);
-      fallBack(sender);
-    }
-  
       });
+  
+  }
+  catch(err){
+    console.log(err);
+  }
 }
 
+  
+      
+
+    
 module.exports = queryCoin;

@@ -13,4 +13,5 @@ const coinSchema = mongoose.Schema({
 
 const Coin = mongoose.model("CoinName",coinSchema);
 
-module.exports = Coin; 
+
+module.exports = {Coin, Word}; 

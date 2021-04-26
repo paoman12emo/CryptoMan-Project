@@ -3,7 +3,7 @@ const Coin = require("../Model/Model.js");
 const queryCoin = require("./queryCoin");
 
 
- function queryName(name,sender){
+ function queryName(name,sender,cur){
 
 
  try { mongoose.connect('mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
@@ -16,11 +16,11 @@ const queryCoin = require("./queryCoin");
   Coin.find({coinShortName : name},(err,res)=>{
     let coinData = res[0];
     if(name===coinData.coinShortName){
-      console.log("ok");
-      queryCoin(coinData.coinFullName,sender,coinData.URL)
+      
+      queryCoin(coinData.coinFullName,sender,coinData.URL,cur)
     }else{
-      console.log("ok2");
-      queryCoin(name,sender,coinData.URL)
+      
+      queryCoin(name,sender,coinData.URL,cur)
     }
   
   
