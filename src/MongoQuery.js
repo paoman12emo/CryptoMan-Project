@@ -4,7 +4,8 @@ const Coin = require("./Model/Model.js");
 
  function queryCoin(name){
 
-   mongoose.connect('mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
+
+ try { mongoose.connect('mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -15,7 +16,10 @@ const Coin = require("./Model/Model.js");
 Coin.find({coinShortName: name},(err,res)=>{
   return (res[0].coinFullName);
 })
-
+}
+catch(err){
+  console.log(err);
+}
 }
 
 
