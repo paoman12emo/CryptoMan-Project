@@ -29,7 +29,7 @@ try{
         }
     }
     catch(err){
-        fallBack(sender);
+        
         console.log(err);
     }    
 

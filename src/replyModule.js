@@ -21,7 +21,7 @@ const request = require('request');
                         {
                           "type": "text",
                           "text": name.toUpperCase()+" 💰",
-                          "size": "3xl",
+                          "size": "xl",
                           "color": "#536162",
                           "contents": []
                         }
@@ -155,7 +155,6 @@ const request = require('request');
            }, function (err, res, body) {
              if (err) console.log('error')
              if (res) console.log('success')
-             if (body) console.log(body)
            })
          }
 
@@ -183,7 +182,6 @@ request({
         }, function (err, res, body) {
           if (err) console.log('error')
           if (res) console.log('success')
-          if (body) console.log(body)
         })
       }    
 
@@ -212,7 +210,6 @@ request({
                }, function (err, res, body) {
                  if (err) console.log('error')
                  if (res) console.log('success')
-                 if (body) console.log(body)
                })
              }
 
@@ -240,7 +237,6 @@ request({
                }, function (err, res, body) {
                  if (err) console.log('error')
                  if (res) console.log('success')
-                 if (body) console.log(body)
                })
              }
 module.exports = {reply,greeting,howTo,fallBack};

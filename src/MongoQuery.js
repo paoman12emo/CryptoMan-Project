@@ -18,8 +18,7 @@ const {fallBack} = require("./replyModule.js");
 
   Coin.find({coinShortName : name},(err,res)=>{
     let coinData = res[0];
-    console.log(coinData);
-
+ 
     if(coinData==undefined){
       fallBack(sender)
     }
