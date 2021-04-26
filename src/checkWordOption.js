@@ -1,5 +1,5 @@
 const queryName = require("./MongoQuery.js")
-const {howto} = require("./replyModule.js");
+const {howTo} = require("./replyModule.js");
 
 function checkWord(char,sender){
 
@@ -16,7 +16,7 @@ try{
          queryName(msg.substring(7,msg.length),sender);  
     }
     else if(msg.includes('CMTใช้ยังไง')){
-        howto(sender);
+        howTo(sender);
     } 
     else if(msg.includes('CMU')){
         queryName(msg.substring(3,msg.length),sender,"USD");
