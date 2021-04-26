@@ -1,11 +1,12 @@
 const mysql      = require('mysql');
-const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  database : 'cryptoman'
-});
 
 function queryName(name){
+ const connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        database : 'cryptoman'
+      });
+      
 connection.connect();
 
 connection.query('SELECT * FROM coin_name WHERE Fullname= '+name+' ', function (error, results, fields) {
