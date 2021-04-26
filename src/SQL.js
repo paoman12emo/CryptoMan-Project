@@ -5,7 +5,8 @@ function queryName(name){
         host     : 'localhost',
         user     : 'root',
         port     : '3306',
-        database : 'cryptoman'
+        database : 'cryptoman',
+        socketPath: '/var/lib/mysql/mysql.sock'
       });
       
 connection.connect();
