@@ -359,20 +359,6 @@ request({
                                         },
                                         {
                                           "type": "separator"
-                                        },
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "uri",
-                                            "label": news_5.text,
-                                            "uri": news_5.url
-                                          },
-                                          "margin": "none",
-                                          "height": "sm",
-                                          "style": "link"
-                                        },
-                                        {
-                                          "type": "separator"
                                         }
                                       ]
                                     }
