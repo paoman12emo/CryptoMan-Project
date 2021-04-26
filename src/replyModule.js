@@ -166,12 +166,12 @@ const request = require('request');
               {
                 "type": "image",
                 "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/As6Fpa.jpg",
-                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/As6Fpa.jpg"
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/As6Fpa.jpg"//Intro
               },
               {
                 "type": "image",
-                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/AsrzS2.jpg",
-                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/AsrzS2.jpg"
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg" //HowTo
               }
           ]
          }
@@ -199,8 +199,8 @@ request({
                    messages: [
                     {
                       "type": "image",
-                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/AsrzS2.jpg",
-                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/AsrzS2.jpg"
+                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg",
+                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg"
                     }
                  ]
                 }
