@@ -6,7 +6,8 @@ function queryName(){
 try{ const connection = mysql.createConnection({
         host     : '127.0.0.1',
         user     : 'root',
-        database : 'cryptoman'
+        database : 'cryptoman',
+        _socket: '/var/run/mysqld/mysqld.sock'
       });
       
 connection.connect();
