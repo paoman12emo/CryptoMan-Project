@@ -52,10 +52,7 @@ if(status!= "join"){
   //   queryCoin(coinName.token,sender,coinName.cur);
   //  }
    
-   else{
-    queryCoin(coinName,sender)
-   }
-          
+ 
   
     res.sendStatus(200)
 

@@ -8,13 +8,13 @@ let msg = char.toUpperCase();
 try{
 
     if(msg.includes('CMTดูราคา')){
-        return changeCoinName(msg.substring(9,msg.length)); 
+         queryName(msg.substring(9,msg.length)); 
     }
     else if(msg.includes('CMTดู')){
-        return changeCoinName(msg.substring(5,msg.length));  
+        queryName(msg.substring(5,msg.length));  
         } 
     else if(msg.includes('CMTราคา')){
-        return changeCoinName(msg.substring(7,msg.length));  
+         queryName(msg.substring(7,msg.length));  
     }
     else if(msg.includes('CMTใช้ยังไง')){
         return "howTo"
@@ -27,7 +27,7 @@ try{
     //     return {token:coin,cur:"USD"};
     // }
     else{
-        return queryName(msg.substring(3,msg.length),sender);
+        queryName(msg.substring(3,msg.length),sender);
         }
     }
     catch(err){
