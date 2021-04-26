@@ -164,9 +164,10 @@ const request = require('request');
             to: groupId,
             messages: [
               {
-            type: 'text',
-            text: "สวัสดี ทุกท่านผมชื่อ CryptoMan ท่านสามารถพิมพ์ CMT(ดูTHB) หรือ CMU(ดูUSD) และตามด้วยชื่อCoinที่ท่านอยากรู้ราคามาได้เลยจ้า ถ้าอยากดูManual พิมพ์ CMT HOWTO ได้เลยจ้า"
-            }
+                "type": "image",
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/Asua1Z.jpg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/Asua1Z.jpg"
+              }
           ]
          }
   

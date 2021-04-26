@@ -10,9 +10,9 @@ mongoose.connect('mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.n
   });
 
 let coin = new Coin({
-  coinFullName: "FILECOIN" ,
-  coinShortName: "FIL",
-  URL: "https://coinmarketcap.com/currencies/filecoin/"
+  coinFullName: "TERRA" ,
+  coinShortName: "LUNA",
+  URL: "https://coinmarketcap.com/currencies/TERRA/"
 })
 
 console.log(coin);
@@ -61,4 +61,4 @@ coin.save((err)=>{
 //  }
 // }
 
-// queryCoin("FILECOIN");
+// queryCoin("Wrapped-Bitcoin");
