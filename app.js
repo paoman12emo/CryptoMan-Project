@@ -1,9 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const {greeting,howTo,fallBack} = require("./src/replyModule.js");
+const {greeting} = require("./src/replyModule.js");
 const checkWord = require("./src/checkWordOption.js");
-const queryCoin = require("./src/queryCoin.js");
-const changeCoinName = require("./src/changeCoinName");
 
 
 
@@ -47,12 +45,6 @@ if(status!= "join"){
 
    }
 
-  //  else if(coinName.cur){
-  //    console.log("ok");
-  //   queryCoin(coinName.token,sender,coinName.cur);
-  //  }
-   
- 
   
     res.sendStatus(200)
 

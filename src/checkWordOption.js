@@ -1,4 +1,5 @@
 const queryName = require("./MongoQuery.js")
+const {howto} = require("./replyModule.js");
 
 function checkWord(char,sender){
 
@@ -15,7 +16,7 @@ try{
          queryName(msg.substring(7,msg.length),sender);  
     }
     else if(msg.includes('CMTใช้ยังไง')){
-        return "howTo"
+        howto(sender);
     } 
     else if(msg.includes('CMU')){
         queryName(msg.substring(3,msg.length),sender,"USD");
@@ -23,10 +24,6 @@ try{
     // else if(msg.includes('CMTC')){
     //     return  function compare 2 coin
     // }    
-    // else if(msg.includes('USD')){
-    //     let coin = msg.replace("USD","").substring(3,msg.length);
-    //     return {token:coin,cur:"USD"};
-    // }
     else{
         queryName(msg.substring(3,msg.length),sender,"THB");
         }
