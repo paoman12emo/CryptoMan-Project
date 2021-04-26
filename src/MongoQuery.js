@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 const Coin = require("../Model/Model.js");
 const queryCoin = require("./queryCoin");
@@ -5,8 +6,10 @@ const queryCoin = require("./queryCoin");
 
  function queryName(name,sender,cur){
 
+  let urlDB ='mongodb+srv://paoman12emo:'+process.env.DB_KEY+'@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
- try { mongoose.connect('mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
+
+ try { mongoose.connect(urlDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
