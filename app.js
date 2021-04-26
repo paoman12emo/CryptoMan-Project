@@ -36,7 +36,7 @@ app.post('/callback',(req, res) => {
 
 if(status!= "join"){
 
-  if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"){
+  if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"&& msg.length !== 3){
    
     let coinName = checkWord(msg,sender);
      

@@ -4,7 +4,7 @@ const request = require('request');
 
 function queryCoin(coinName,sender,url,cur){
   try{  
-    console.log(cur+"1");
+   
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
@@ -27,11 +27,13 @@ function queryCoin(coinName,sender,url,cur){
      
         const name = Object.keys(coinInfo)[0]; 
 
-        const price = cur="THB"?coinInfo[name].thb:coinInfo[name].usd;
+        const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
         
-        const change = cur="THB"?coinInfo[name].thb_24h_change:coinInfo[name].usd_24h_change;
+        const change = coinInfo[name].thb?coinInfo[name].thb_24h_change:coinInfo[name].usd_24h_change;
   
-        const vol = cur="THB"?coinInfo[name].thb_24h_vol:coinInfo[name].usd_24h_vol;
+        const vol = coinInfo[name].thb?coinInfo[name].thb_24h_vol:coinInfo[name].usd_24h_vol;
+
+        let us = coinInfo[name].thb?"฿":"$"
       
  
      if(name=== undefined || price===undefined){
@@ -39,7 +41,7 @@ function queryCoin(coinName,sender,url,cur){
       fallBack(sender)
      }else{
       
-      reply(sender,name,price,change,vol,url,cur);
+      reply(sender,name,price,change,vol,url,us);
      }
   
       });
