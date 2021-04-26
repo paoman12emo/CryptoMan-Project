@@ -6,7 +6,7 @@ const queryCoin = require("./queryCoin");
 
  function queryName(name,sender,cur){
 
-  let urlDB ='mongodb+srv://paoman12emo:'+process.env.DB_KEY+'@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+  let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
   console.log(urlDB);
 
