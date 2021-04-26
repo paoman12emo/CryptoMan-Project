@@ -4,6 +4,12 @@ const {greeting,howTo,fallBack} = require("./src/replyModule.js");
 const checkWord = require("./src/checkWordOption.js");
 const queryCoin = require("./src/queryCoin.js");
 const changeCoinName = require("./src/changeCoinName");
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority",{
+useNewUrlParser: true, useUnifiedTopology: true
+});
+
 
 
 const app = express();
