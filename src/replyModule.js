@@ -255,7 +255,7 @@ request({
     let news_4 = newsLists[3]
     let news_5 = newsLists[4]
 
-    console.log(news_1.text,news_1.url);
+    
 
                 let body = {
                            to: sender,
@@ -290,13 +290,14 @@ request({
                                   "action": {
                                     "type": "uri",
                                     "label": "Action",
-                                    "uri": "https://linecorp.com/"
+                                    "uri": "https://www.coingecko.com/th/news"
                                   }
                                 },
                                 "body": {
                                   "type": "box",
-                                  "layout": "horizontal",
+                                  "layout": "vertical",
                                   "spacing": "md",
+                                  "margin": "none",
                                   "contents": [
                                     {
                                       "type": "box",
@@ -307,8 +308,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": "Button",
-                                            "uri": "https://linecorp.com"
+                                            "label": news_1.text.substring(0,20),
+                                            "uri": news_1.url
                                           },
                                           "color": "#FFFFFFFF",
                                           "margin": "none",
@@ -322,8 +323,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": "Button",
-                                            "uri": "https://linecorp.com"
+                                            "label": news_2.text.substring(0,20),
+                                            "uri": news_2.url
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -336,8 +337,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": "Button",
-                                            "uri": "https://linecorp.com"
+                                            "label": news_3.text.substring(0,20),
+                                            "uri": news_3.url
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -350,8 +351,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": "Button",
-                                            "uri": "https://linecorp.com"
+                                            "label": news_4.text.substring(0,20),
+                                            "uri": news_4.url
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -364,8 +365,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": "Button",
-                                            "uri": "https://linecorp.com"
+                                            "label": news_5.text.substring(0,20),
+                                            "uri": news_5.url
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -387,7 +388,7 @@ request({
                                       "action": {
                                         "type": "uri",
                                         "label": "More News",
-                                        "uri": "https://linecorp.com"
+                                        "uri": "https://www.coingecko.com/th/news"
                                       },
                                       "color": "#499C98FF",
                                       "style": "primary"
