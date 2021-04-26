@@ -3,7 +3,7 @@ const request = require('request');
 
 
 function queryCoin(coinName,sender,url,cur){
-  try{  
+
    
     const options = {
         method: 'GET',
@@ -18,7 +18,7 @@ function queryCoin(coinName,sender,url,cur){
           useQueryString: true
         }
       };
-      
+  try{    
       request(options, function (err, response, body) {
     
         const coinInfo = JSON.parse(body);
