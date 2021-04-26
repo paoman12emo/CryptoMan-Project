@@ -34,7 +34,7 @@ try{
         console.log(err);
     }    
 
-    
+    console.log(msg.substring(9,msg.length));
 }
 
 module.exports = checkWord;

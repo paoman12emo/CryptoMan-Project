@@ -1,36 +1,26 @@
-const mongoose = require('mongoose');
-const Coin = require("./Model/Model.js");
+function checkWord(char){
 
-
- function queryCoin(name){
-
-
- try {
-
-    mongoose.connect('mongodb+srv://paoman12emo:Paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  });
-
-
- Coin.find({},(err,res)=>{
-  let coinData = res[0];
-  if(name===coinData.coinShortName){
-    console.log(coinData.coinFullName)
-  }else{
-    console.log(coinData.URL)
+  let msg = char.toUpperCase();
+  try{
+  
+      if(msg.includes('CMTดูราคา')){
+           console.log(msg.substring(9,msg.length)); 
+      }
+      else if(msg.includes('CMTดู')){
+        console.log(msg.substring(5,msg.length));  
+          } 
+      else if(msg.includes('CMTราคา')){
+        console.log(msg.substring(7,msg.length));  
+      }
+      else{
+          queryName(msg.substring(3,msg.length));
+          }
+      }
+      catch(err){
+          console.log(err);
+      }    
+  
+      
   }
 
-
-})
-
-
-}
-catch(err){
-  console.log(err);
-}
-}
-
-queryCoin("BITCOIN")
+  checkWord("CMTดูราคาBTC")
