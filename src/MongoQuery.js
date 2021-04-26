@@ -9,7 +9,6 @@ const {fallBack} = require("./replyModule.js");
   try { 
   let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
-
     mongoose.connect(urlDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -20,7 +19,8 @@ const {fallBack} = require("./replyModule.js");
   Coin.find({coinShortName : name},(err,res)=>{
     let coinData = res[0];
     console.log(coinData.coinShortName);
-    if(coinData.coinShortName==undefined){
+    
+    if(coinData==undefined){
       fallBack(sender)
     }
      else if(name===coinData.coinShortName){
