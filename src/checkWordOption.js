@@ -8,13 +8,13 @@ let msg = char.toUpperCase();
 try{
 
     if(msg.includes('CMTดูราคา')){
-         queryName(msg.substring(9,msg.length)); 
+         queryName(msg.substring(9,msg.length),sender); 
     }
     else if(msg.includes('CMTดู')){
-        queryName(msg.substring(5,msg.length));  
+        queryName(msg.substring(5,msg.length),sender);  
         } 
     else if(msg.includes('CMTราคา')){
-         queryName(msg.substring(7,msg.length));  
+         queryName(msg.substring(7,msg.length),sender);  
     }
     else if(msg.includes('CMTใช้ยังไง')){
         return "howTo"
@@ -34,7 +34,7 @@ try{
         console.log(err);
     }    
 
-    console.log(msg.substring(9,msg.length));
+   
 }
 
 module.exports = checkWord;
