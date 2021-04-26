@@ -19,7 +19,7 @@ async function getNews(sender){
           });
         })
 
-        reportNews(sender,newsLists);
+        await reportNews(sender,newsLists);
 
 }
 
