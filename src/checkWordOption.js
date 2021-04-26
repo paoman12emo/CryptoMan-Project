@@ -1,4 +1,5 @@
 const changeCoinName =  require("./changeCoinName.js");
+const queryName = require("./SQL.js");
 
 
 function checkWord(char){
@@ -26,7 +27,7 @@ try{
         return {token:coin,cur:"USD"};
     }
     else{
-        return changeCoinName(msg.substring(3,msg.length)); 
+        return queryName(msg.substring(3,msg.length)); 
         }
 
     }
