@@ -248,7 +248,6 @@ request({
                })
               }
   function reportNews(sender,newsLists) {
-    console.log(newsLists);
 
     let news_1 = newsLists[0]
     let news_2 = newsLists[1]
@@ -256,7 +255,7 @@ request({
     let news_4 = newsLists[3]
     let news_5 = newsLists[4]
 
-
+    console.log(news_1.text,news_1.url);
 
                 let body = {
                            to: sender,
