@@ -38,9 +38,9 @@ if(status!= "join"){
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3){
    
-    let coinName = checkWord(msg);
+    let coinName = checkWord(msg,sender);
      
-  //  console.log(coinName);
+  
    if( coinName === "howTo"){
      
     howTo(sender)

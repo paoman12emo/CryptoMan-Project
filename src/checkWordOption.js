@@ -1,8 +1,8 @@
 const changeCoinName =  require("./changeCoinName.js");
-const queryCoin = require("./MongoQuery.js")
+const queryName = require("./MongoQuery.js")
 
 
-function checkWord(char){
+function checkWord(char,sender){
 
 let msg = char.toUpperCase();
 try{
@@ -19,15 +19,15 @@ try{
     else if(msg.includes('CMTใช้ยังไง')){
         return "howTo"
     } 
-    else if(msg.includes('CMTC')){
-        return // function compare 2 coin
-    }    
-    else if(msg.includes('USD')){
-        let coin = msg.replace("USD","").substring(3,msg.length);
-        return {token:coin,cur:"USD"};
-    }
+    // else if(msg.includes('CMTC')){
+    //     return  function compare 2 coin
+    // }    
+    // else if(msg.includes('USD')){
+    //     let coin = msg.replace("USD","").substring(3,msg.length);
+    //     return {token:coin,cur:"USD"};
+    // }
     else{
-        return queryCoin(msg.substring(3,msg.length));
+        return queryName(msg.substring(3,msg.length),sender);
         }
     }
     catch(err){

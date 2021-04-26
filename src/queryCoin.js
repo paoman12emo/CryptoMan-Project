@@ -2,7 +2,7 @@ const {reply,fallBack} = require("./replyModule.js");
 const request = require('request');
 
 
-function queryCoin(coinName,sender,cur){
+function queryCoin(coinName,sender,url){
   
  newCur = cur==="USD"?"usd":"thb";
 
@@ -40,7 +40,7 @@ function queryCoin(coinName,sender,cur){
       fallBack(sender)
      }else{
       
-      reply(sender,name,price,change,vol);
+      reply(sender,name,price,change,vol,url);
      }
   
        }

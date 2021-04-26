@@ -4,7 +4,7 @@ const request = require('request');
 
 
 
-async function reply(sender,name,price,change,vol) {
+async function reply(sender,name,price,change,vol,url) {
 
 
     let body = {
@@ -133,7 +133,7 @@ async function reply(sender,name,price,change,vol) {
                           "action": {
                             "type": "uri",
                             "label": "More info",
-                            "uri": name==="binancecoin"?"https://coinmarketcap.com/currencies/binance-coin/":"https://coinmarketcap.com/currencies/"+name+"/"
+                            "uri": url
                           },
                           "color": "#98DDCA",
                           "gravity": "bottom",
