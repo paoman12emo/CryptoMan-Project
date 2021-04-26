@@ -4,7 +4,6 @@ const cheerio = require('cheerio');
 const reportNews = require('./replyModule.js');
 
 
-
 async function getNews(sender){
     const response =  await axios.get(`https://www.coingecko.com/th/news`)
     const html = response.data
