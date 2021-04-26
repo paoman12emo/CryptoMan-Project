@@ -23,8 +23,13 @@ function queryCoin(coinName,sender,url,cur){
       const coinInfo = JSON.parse(body);
    
       const name = Object.keys(coinInfo)[0]; 
-      console.log(coinInfo);
 
+      if(name == undefined){
+
+        fallBack(sender)
+       
+      }
+     else{
       const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
       
       const change = coinInfo[name].thb?coinInfo[name].thb_24h_change:coinInfo[name].usd_24h_change;
@@ -32,17 +37,14 @@ function queryCoin(coinName,sender,url,cur){
       const vol = coinInfo[name].thb?coinInfo[name].thb_24h_vol:coinInfo[name].usd_24h_vol;
 
       let us = coinInfo[name].thb?"฿":"$"
-      
-      if(name== undefined){
-        fallBack(sender)
-      }else{
-    reply(sender,name,price,change,vol,url,us);
+
+      reply(sender,name,price,change,vol,url,us);
       }
 
 });
    }
   catch(err){
-   fallBack(sender)
+   
     console.log(err);
   }
 }
