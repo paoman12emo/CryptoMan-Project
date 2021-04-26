@@ -27,9 +27,9 @@ try{
         return {token:coin,cur:"USD"};
     }
     else{
-        return queryName(msg.substring(3,msg.length)); 
+        return queryName(); 
         }
-
+        // queryName(msg.substring(3,msg.length))
     }
     catch(err){
         console.log(err);

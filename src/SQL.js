@@ -1,7 +1,7 @@
 const mysql      = require('mysql');
 
-function queryName(name){
-    let name = "BITCOIN"
+function queryName(){
+    
     try{ const connection = mysql.createConnection({
             host     : '127.0.0.1',
             user     : 'root',
