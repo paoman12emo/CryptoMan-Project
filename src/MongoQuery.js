@@ -14,7 +14,6 @@ const Coin = require("../Model/Model.js");
 
 
 Coin.find({coinShortName: name},(err,res)=>{
-  console.log(res[0].coinFullName,res);
   return (res[0].coinFullName);
 })
 }

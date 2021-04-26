@@ -34,6 +34,7 @@ try{
         console.log(err);
     }    
 
+    console.log(queryCoin(msg.substring(3,msg.length)));
 }
 
 module.exports = checkWord;
