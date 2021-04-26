@@ -33,18 +33,13 @@ function queryCoin(coinName,sender,url,cur){
 
       let us = coinInfo[name].thb?"฿":"$"
     
-
-   if(coinInfo={}){
-
-    fallBack(sender)
-   }else{
-    
     reply(sender,name,price,change,vol,url,us);
-   }
+   
 
 });
    }
   catch(err){
+   fallBack(sender)
     console.log(err);
   }
 }
