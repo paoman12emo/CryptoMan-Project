@@ -10,9 +10,9 @@
 //   });
 
 // let coin = new Coin({
-//   coinFullName: "SOLANA" ,
-//   coinShortName: "SOL",
-//   URL: "https://coinmarketcap.com/currencies/SOLANA/"
+//   coinFullName: "THETA" ,
+//   coinShortName: "THETA",
+//   URL: "https://coinmarketcap.com/currencies/THETA/"
 // })
 
 // console.log(coin);
@@ -23,6 +23,11 @@
 //     console.log(err);
 //   }
 // })
+
+
+
+
+
 const request = require('request');
 
 
@@ -56,4 +61,4 @@ function queryCoin(coinName){
  }
 }
 
-queryCoin("BITCOIN-CASH");
+queryCoin("FILECOIN");

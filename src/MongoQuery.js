@@ -16,7 +16,7 @@ const {fallBack} = require("./replyModule.js");
     useCreateIndex: true
   });
 
-  Coin.find({coinShortName : name},(err,res)=>{
+  Coin.find({$or:[{coinShortName : name},{coinFulltName : name}]},(err,res)=>{
     let coinData = res[0];
  
     if(coinData==undefined){
