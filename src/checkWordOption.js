@@ -15,7 +15,7 @@ try{
     else if(msg.includes('CMTราคา')){
          queryName(msg.substring(7,msg.length),sender);  
     }
-    else if(msg.includes('CMTใช้ยังไง')){
+    else if(msg.includes('CMTใช้ยังไง')||msg.includes('CMTHOWTO')){
         howTo(sender);
     } 
     else if(msg.includes('CMU')){

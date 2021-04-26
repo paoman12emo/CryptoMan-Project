@@ -166,7 +166,7 @@ const request = require('request');
             messages: [
               {
             type: 'text',
-            text: "สวัสดี ทุกท่านผมชื่อ CryptoMan ท่านสามารถพิมพ์ CMT หริอ cmt และตามด้วยชื่อCoinที่ท่านอยากรู้ราคามาได้เลยจ้า"
+            text: "สวัสดี ทุกท่านผมชื่อ CryptoMan ท่านสามารถพิมพ์ CMT(ดูTHB) หริอ CMU(ดูUSD) และตามด้วยชื่อCoinที่ท่านอยากรู้ราคามาได้เลยจ้า ถ้าอยากดูManual พิมพ์ CMT HOWTO ได้เลยจ้า"
             }
           ]
          }
@@ -195,7 +195,7 @@ request({
                    messages: [
                      {
                    type: 'text',
-                   text: "ง่ายๆ พิมพ์ cmt ตามด้วยชื่อcoinหรือชื่อเต็มก็ได้"
+                   text: "ง่ายๆ พิมพ์ CMT(ดูTHB) หริอ CMU(ดูUSD) ตามด้วยชื่อcoinหรือชื่อเต็มก็ได้"
                    }
                  ]
                 }
