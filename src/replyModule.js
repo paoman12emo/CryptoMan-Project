@@ -311,7 +311,6 @@ request({
                                             "label": news_1.text.substring(0,60),
                                             "uri": news_1.url
                                           },
-                                          "size": "xs",
                                           "color": "#7AA0D5FF",
                                           "margin": "none",
                                           "height": "sm",
@@ -327,7 +326,6 @@ request({
                                             "label": news_2.text.substring(0,60),
                                             "uri": news_2.url
                                           },
-                                          "size": "xs",
                                           "color": "#7AA0D5FF",
                                           "margin": "none",
                                           "height": "sm",
@@ -343,7 +341,6 @@ request({
                                             "label": news_3.text.substring(0,60),
                                             "uri": news_3.url
                                           },
-                                          "size": "xs",
                                           "color": "#7AA0D5FF",
                                           "margin": "none",
                                           "height": "sm",
@@ -359,7 +356,6 @@ request({
                                             "label": news_4.text.substring(0,60),
                                             "uri": news_4.url
                                           },
-                                          "size": "xs",
                                           "color": "#7AA0D5FF",
                                           "margin": "none",
                                           "height": "sm",
@@ -375,7 +371,6 @@ request({
                                             "label": news_5.text.substring(0,60),
                                             "uri": news_5.url
                                           },
-                                          "size": "xs",
                                           "color": "#7AA0D5FF",
                                           "margin": "none",
                                           "height": "sm",
