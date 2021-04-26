@@ -22,9 +22,9 @@ function queryCoin(coinName,sender,url,cur){
       request(options, function (err, response, body) {
     
         const coinInfo = JSON.parse(body);
-        console.log(coinInfo);
      
         const name = Object.keys(coinInfo)[0]; 
+        console.log(name);
 
         const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
         
@@ -47,6 +47,7 @@ function queryCoin(coinName,sender,url,cur){
   
   }
   catch(err){
+    fallBack(sender)
     console.log(err);
   }
 }
