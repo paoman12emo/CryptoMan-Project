@@ -4,7 +4,7 @@ const request = require('request');
 
 function queryCoin(coinName,sender,url,cur){
   try{  
-
+    console.log(cur+"1");
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',

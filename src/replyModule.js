@@ -6,7 +6,7 @@ const request = require('request');
 
 async function reply(sender,name,price,change,vol,url,cur) {
 
-  console.log(cur);
+  console.log(cur+"2");
 
     let body = {
                to: sender,
