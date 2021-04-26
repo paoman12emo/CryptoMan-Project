@@ -263,7 +263,7 @@ request({
                             {
                               "type": "flex",
                               "altText": "This is a Flex Message",
-                              "contents":{
+                              "contents": {
                                 "type": "bubble",
                                 "header": {
                                   "type": "box",
@@ -307,8 +307,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_1.text,
-                                            "uri": news_1.url
+                                            "label": "Button",
+                                            "uri": "https://linecorp.com"
                                           },
                                           "color": "#FFFFFFFF",
                                           "margin": "none",
@@ -322,8 +322,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_2.text,
-                                            "uri": news_2.url
+                                            "label": "Button",
+                                            "uri": "https://linecorp.com"
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -336,8 +336,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_3.text,
-                                            "uri": news_3.url
+                                            "label": "Button",
+                                            "uri": "https://linecorp.com"
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -350,8 +350,22 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_4.text,
-                                            "uri": news_4.url
+                                            "label": "Button",
+                                            "uri": "https://linecorp.com"
+                                          },
+                                          "margin": "none",
+                                          "height": "sm",
+                                          "style": "link"
+                                        },
+                                        {
+                                          "type": "separator"
+                                        },
+                                        {
+                                          "type": "button",
+                                          "action": {
+                                            "type": "uri",
+                                            "label": "Button",
+                                            "uri": "https://linecorp.com"
                                           },
                                           "margin": "none",
                                           "height": "sm",
@@ -373,7 +387,7 @@ request({
                                       "action": {
                                         "type": "uri",
                                         "label": "More News",
-                                        "uri": "https://www.coingecko.com/th/news"
+                                        "uri": "https://linecorp.com"
                                       },
                                       "color": "#499C98FF",
                                       "style": "primary"
