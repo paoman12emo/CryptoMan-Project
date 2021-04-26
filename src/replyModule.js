@@ -2,11 +2,7 @@
 const request = require('request');
 
 
-
-
-async function reply(sender,name,price,change,vol,url,cur) {
-
-  console.log(cur+"2");
+ function reply(sender,name,price,change,vol,url,cur) {
 
     let body = {
                to: sender,
@@ -61,7 +57,7 @@ async function reply(sender,name,price,change,vol,url,cur) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": price.toFixed(2)+" ฿",
+                                  "text": price.toFixed(2)+" "+cur,
                                   "size": "xxs",
                                   "color": "#C06014",
                                   "align": "end",
@@ -108,7 +104,7 @@ async function reply(sender,name,price,change,vol,url,cur) {
                                 },
                                 {
                                   "type": "text",
-                                  "text": vol.toFixed(2)+" ฿",
+                                  "text": vol.toFixed(2)+" "+cur,
                                   "size": "xxs",
                                   "color": "#C06014",
                                   "align": "end",
