@@ -1,5 +1,4 @@
 const changeCoinName =  require("./changeCoinName.js");
-const checkCoin = require("./MongoQuerycoinName.js");
 
 
 function checkWord(char){
@@ -27,7 +26,7 @@ try{
         return {token:coin,cur:"USD"};
     }
     else{
-        return checkCoin(msg.substring(3,msg.length)); 
+        return changeCoinName(msg.substring(3,msg.length)); 
         }
 
     }
