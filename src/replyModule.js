@@ -165,8 +165,13 @@ const request = require('request');
             messages: [
               {
                 "type": "image",
-                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/Asua1Z.jpg",
-                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/Asua1Z.jpg"
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/As6Fpa.jpg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/As6Fpa.jpg"
+              },
+              {
+                "type": "image",
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/Asn70R.jpg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/Asn70R.jpg"
               }
           ]
          }
@@ -192,10 +197,11 @@ request({
         let body = {
                    to: sender,
                    messages: [
-                     {
-                   type: 'text',
-                   text: "ง่ายๆ พิมพ์ CMT(ดูTHB) หรือ CMU(ดูUSD) ตามด้วยชื่อcoinหรือชื่อเต็มก็ได้"
-                   }
+                    {
+                      "type": "image",
+                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/Asn70R.jpg",
+                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/Asn70R.jpg"
+                    }
                  ]
                 }
          
@@ -219,10 +225,11 @@ request({
         let body = {
                    to: sender,
                    messages: [
-                     {
-                   type: 'text',
-                   text: "ขอโทษครับ ไม่พบข้อมูล หรือ พิมพ์ผิดรึเปล่าครับ"
-                   }
+                    {
+                      "type": "image",
+                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/26/AsnrFu.jpg",
+                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/26/AsnrFu.jpg"
+                    }
                  ]
                 }
          
