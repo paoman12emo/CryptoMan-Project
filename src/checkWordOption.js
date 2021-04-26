@@ -1,5 +1,5 @@
 const queryName = require("./MongoQuery.js")
-const {howTo} = require("./replyModule.js");
+const {howTo,fallBack} = require("./replyModule.js");
 
 function checkWord(char,sender){
 
@@ -29,6 +29,7 @@ try{
         }
     }
     catch(err){
+        fallBack(sender);
         console.log(err);
     }    
 

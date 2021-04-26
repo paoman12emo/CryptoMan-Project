@@ -2,6 +2,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 const Coin = require("../Model/Model.js");
 const queryCoin = require("./queryCoin");
+const {fallBack} = require("./replyModule.js");
 
 
  function queryName(name,sender,cur){
@@ -31,6 +32,7 @@ const queryCoin = require("./queryCoin");
 
 }
 catch(err){
+  fallBack(sender)
   console.log(err);
 }
 }
