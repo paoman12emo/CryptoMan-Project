@@ -290,7 +290,7 @@ request({
                                   "action": {
                                     "type": "uri",
                                     "label": "Action",
-                                    "uri": "https://www.coingecko.com/th/news"
+                                    "uri": "https://linecorp.com/"
                                   }
                                 },
                                 "body": {
