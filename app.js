@@ -45,10 +45,10 @@ if(status!= "join"){
 
    }
 
-   else if(coinName.cur){
-     console.log("ok");
-    queryCoin(coinName.token,sender,coinName.cur);
-   }
+  //  else if(coinName.cur){
+  //    console.log("ok");
+  //   queryCoin(coinName.token,sender,coinName.cur);
+  //  }
    
    else{
     queryCoin(coinName,sender)
