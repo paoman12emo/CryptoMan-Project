@@ -308,7 +308,7 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_1.text.substring(0,20),
+                                            "label": news_1.text.substring(0,40),
                                             "uri": news_1.url
                                           },
                                           "color": "#FFFFFFFF",
@@ -323,7 +323,7 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_2.text.substring(0,20),
+                                            "label": news_2.text.substring(0,40),
                                             "uri": news_2.url
                                           },
                                           "margin": "none",
@@ -337,7 +337,7 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_3.text.substring(0,20),
+                                            "label": news_3.text.substring(0,40),
                                             "uri": news_3.url
                                           },
                                           "margin": "none",
@@ -351,22 +351,8 @@ request({
                                           "type": "button",
                                           "action": {
                                             "type": "uri",
-                                            "label": news_4.text.substring(0,20),
+                                            "label": news_4.text.substring(0,40),
                                             "uri": news_4.url
-                                          },
-                                          "margin": "none",
-                                          "height": "sm",
-                                          "style": "link"
-                                        },
-                                        {
-                                          "type": "separator"
-                                        },
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "uri",
-                                            "label": news_5.text.substring(0,20),
-                                            "uri": news_5.url
                                           },
                                           "margin": "none",
                                           "height": "sm",
