@@ -16,8 +16,10 @@ const queryCoin = require("./queryCoin");
   Coin.find({},(err,res)=>{
     let coinData = res[0];
     if(name===coinData.coinShortName){
+      console.log(ok);
       queryCoin(coinData.coinFullName,sender,coinData.URL)
     }else{
+      console.log(ok2);
       queryCoin(name,sender,coinData.URL)
     }
   

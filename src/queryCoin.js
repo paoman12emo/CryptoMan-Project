@@ -4,7 +4,7 @@ const request = require('request');
 
 function queryCoin(coinName,sender,url){
   
-console.log(coinName);
+
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
@@ -26,11 +26,11 @@ console.log(coinName);
 
         const name = Object.keys(coinInfo)[0]; 
 
-        const price = coinInfo[name].usd?coinInfo[name].usd:coinInfo[name].thb;
+        const price = coinInfo[name].thb;
         
-        const change = coinInfo[name].usd_24h_change?coinInfo[name].usd_24h_change:coinInfo[name].thb_24h_change
+        const change = coinInfo[name].thb_24h_change
   
-        const vol = coinInfo[name].usd_24h_vol?coinInfo[name].usd_24h_vol:coinInfo[name].thb_24h_vol
+        const vol = coinInfo[name].thb_24h_vol
         
   
      if(name=== undefined || price===undefined){
