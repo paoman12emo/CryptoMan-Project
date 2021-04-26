@@ -32,9 +32,12 @@ function queryCoin(coinName,sender,url,cur){
       const vol = coinInfo[name].thb?coinInfo[name].thb_24h_vol:coinInfo[name].usd_24h_vol;
 
       let us = coinInfo[name].thb?"฿":"$"
-    
+      
+      if(name== undefined){
+        fallBack(sender)
+      }else{
     reply(sender,name,price,change,vol,url,us);
-   
+      }
 
 });
    }

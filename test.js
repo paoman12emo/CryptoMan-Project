@@ -24,16 +24,52 @@
 //   }
 // })
 
-let a ={}
 
-if(a={}){
-  console.log(ok);
-}else{
-  console.log(not);
+const request = require('request');
+
+
+function queryCoin(coinName,cur){
+
+   try{
+    const options = {
+      method: 'GET',
+      url: 'https://coingecko.p.rapidapi.com/simple/price',
+      qs: {ids: coinName, vs_currencies: cur,
+           include_24hr_change: 'true',
+           include_24hr_vol: 'true'
+           },
+      headers: {
+        'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
+        'x-rapidapi-host': 'coingecko.p.rapidapi.com',
+        useQueryString: true
+      }
+    };  
+    request(options, function (err, response, body) {
+  
+      const coinInfo = JSON.parse(body);
+   
+
+      let name = Object.keys(coinInfo)[0];
+      console.log(name);
+
+      if(name== undefined){
+        console.log("ok");
+      }else{
+        console.log("not");
+      }
+   
+
+});
+   }
+  catch(err){
+ 
+    console.log(err);
+  }
 }
 
 
 
+queryCoin("BITCOINCASH","THB")
 
 
 
