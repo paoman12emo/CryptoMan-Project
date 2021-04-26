@@ -23,7 +23,7 @@ function queryCoin(coinName,sender,url,cur){
       const coinInfo = JSON.parse(body);
    
       const name = Object.keys(coinInfo)[0]; 
-      console.log(name);
+      console.log(coinInfo);
 
       const price = coinInfo[name].thb?coinInfo[name].thb:coinInfo[name].usd;
       
@@ -34,7 +34,7 @@ function queryCoin(coinName,sender,url,cur){
       let us = coinInfo[name].thb?"฿":"$"
     
 
-   if(name=== undefined || price===undefined){
+   if(coinInfo={}){
 
     fallBack(sender)
    }else{
@@ -46,9 +46,6 @@ function queryCoin(coinName,sender,url,cur){
    }
   catch(err){
     console.log(err);
-  }
-  finally{
-    fallBack(sender)
   }
 }
 

@@ -5,11 +5,11 @@ const queryCoin = require("./queryCoin");
 
 
  function queryName(name,sender,cur){
-
+  try { 
   let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
- 
- try { mongoose.connect(urlDB, {
+
+    mongoose.connect(urlDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
