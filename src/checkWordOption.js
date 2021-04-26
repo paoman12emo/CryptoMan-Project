@@ -27,7 +27,7 @@ try{
         return {token:coin,cur:"USD"};
     }
     else{
-        return queryCoin(msg.substring(3,msg.length))
+        return queryCoin(msg.substring(3,msg.length));
         }
     }
     catch(err){

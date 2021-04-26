@@ -40,7 +40,7 @@ if(status!= "join"){
    
     let coinName = checkWord(msg);
      
-
+   console.log(coinName);
    if( coinName === "howTo"){
      
     howTo(sender)
