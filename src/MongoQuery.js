@@ -13,9 +13,12 @@ const Coin = require("../Model/Model.js");
   });
 
 
-Coin.find({coinShortName: name},(err,res)=>{
-  return (res[0].coinFullName);
+
+let coin = Coin.find({coinShortName: name},(err,res)=>{
+  return res[0].coinFullName;
 })
+console.log(coin);
+return coin
 }
 catch(err){
   console.log(err);
