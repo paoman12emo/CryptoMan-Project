@@ -10,9 +10,9 @@ mongoose.connect('mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.n
   });
 
 let coin = new Coin({
-  coinFullName: "TERRA" ,
-  coinShortName: "LUNA",
-  URL: "https://coinmarketcap.com/currencies/TERRA/"
+  coinFullName: "RADICLE" ,
+  coinShortName: "RAD",
+  URL: "https://www.coingecko.com/th/coin/radicle/usd"
 })
 
 console.log(coin);
@@ -61,4 +61,4 @@ coin.save((err)=>{
 //  }
 // }
 
-// queryCoin("Wrapped-Bitcoin");
+// queryCoin("The-Graph");
