@@ -8,6 +8,8 @@ const queryCoin = require("./queryCoin");
 
   let urlDB ='mongodb+srv://paoman12emo:'+process.env.DB_KEY+'@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
+  console.log(urlDB);
+
 
  try { mongoose.connect(urlDB, {
     useNewUrlParser: true,
