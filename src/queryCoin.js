@@ -4,13 +4,13 @@ const request = require('request');
 
 function queryCoin(coinName,sender,url){
   
- newCur = cur==="USD"?"usd":"thb";
+
 
   
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/simple/price',
-        qs: {ids: coinName, vs_currencies: newCur,
+        qs: {ids: coinName, vs_currencies:"THB",
              include_24hr_change: 'true',
              include_24hr_vol: 'true'
              },
