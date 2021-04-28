@@ -24,7 +24,10 @@ try{
     } 
     else if(msg.includes('CMTNEWS')){
         getNews(sender)
-    }    
+    }  
+    else if(msg.includes('CMTLISTS')){
+        getTopLists(sender)
+    }  
     else{
         queryName(msg.substring(3,msg.length),sender,"THB");
         }

@@ -1,5 +1,7 @@
 
 const request = require('request');
+const mongoose = require('mongoose');
+const Coin = require("../Model/Model.js");
 
 
  function reply(sender,name,price,change,vol,url,cur) {
@@ -421,8 +423,258 @@ request({
                      }
             
 
+   async function replyTopLists(sender,topsLists) {
+    let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+
+    mongoose.connect(urlDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  });
+    let container =[] 
+    
+
+    for(let i = 1; i<=10; i++){
+      let list=topsLists[i]
+      let coinList = list.text.replace(/\s/g, "-");
+
+      Coin.find({coinFullName : coinList},(err, res)=>{
+
+        console.log(res);
+      })
+
+
+      
+    }
+
+                      let body = {
+                                 to: sender,
+                                 messages: [
+                                  {
+                                    "type": "flex",
+                                    "altText": "This is a Flex Message",
+                                    "contents": {
+                                      "type": "bubble",
+                                      "header": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "flex": 0,
+                                        "backgroundColor": "#FFE8D6",
+                                        "contents": [
+                                          {
+                                            "type": "text",
+                                            "text": "Top 10 Coins of the Day",
+                                            "weight": "bold",
+                                            "size": "lg",
+                                            "color": "#FF971D",
+                                            "align": "center",
+                                            "contents": []
+                                          }
+                                        ]
+                                      },
+                                      "hero": {
+                                        "type": "image",
+                                        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStlUjchkvXj_l70eZ0LA18kWHexkoTSROCiA&usqp=CAU",
+                                        "size": "full",
+                                        "aspectRatio": "20:13",
+                                        "aspectMode": "cover",
+                                        "action": {
+                                          "type": "uri",
+                                          "label": "Action",
+                                          "uri": "https://linecorp.com"
+                                        }
+                                      },
+                                      "body": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "md",
+                                        "action": {
+                                          "type": "uri",
+                                          "label": "Action",
+                                          "uri": "https://linecorp.com"
+                                        },
+                                        "contents": [
+                                          {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "spacing": "sm",
+                                            "contents": [
+                                              {
+                                                "type": "separator",
+                                                "margin": "none",
+                                                "color": "#0D0B0BFF"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[0],
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#FFD700FF",
+                                                "margin": "xs",
+                                                "height": "sm",
+                                                "style": "link"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#C0C0C0",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#CD7F32",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": "Button",
+                                                  "uri": "https://linecorp.com"
+                                                },
+                                                "color": "#E0E7FDFF",
+                                                "margin": "xs",
+                                                "height": "sm"
+                                              },
+                                              {
+                                                "type": "separator",
+                                                "margin": "none",
+                                                "color": "#0D0B0BFF"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "text",
+                                            "text": "reference by www.coingecko.com/en",
+                                            "size": "xxs",
+                                            "color": "#AAAAAA",
+                                            "wrap": true,
+                                            "contents": []
+                                          }
+                                        ]
+                                      },
+                                      "footer": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                          {
+                                            "type": "spacer",
+                                            "size": "xs"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                               ]
+                              }
+                       
+                    await request({
+                               headers:  {
+                                 'Content-Type': 'application/json',
+                                 'Authorization': 'Bearer {MFUej68ETDOmnN95+n7dOkr9SGQ8bPw9mn9C4RmlE1wud2zkVcAHbzK7ibC6+mHC6tcWSL6LVKgxU5Mg5i+juHoLGbKxfB5pJmquyre71iSSs886P3KB7wMWVargRO1aEEoGeWhrpGhv2aArMD7U0AdB04t89/1O/w1cDnyilFU=}'
+                             },
+                               url: 'https://api.line.me/v2/bot/message/push',
+                               method: 'POST',
+                               body: body,
+                               json: true
+                             }, function (err, res, body) {
+                               if (err) console.log('error')
+                               if (res) console.log('success')
+                             })
+                           }
 
 
 
 
-module.exports = {reply,greeting,howTo,fallBack,reportNews};
+module.exports = {reply,greeting,howTo,fallBack,reportNews,replyTopLists};
