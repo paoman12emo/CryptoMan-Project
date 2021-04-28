@@ -437,16 +437,10 @@ request({
 
     for(let i = 1; i<=10; i++){
       let list=topsLists[i]
-      let coinList = list.text.replace(/\s/g, "-");
-
-      Coin.find({coinFullName : coinList},(err, res)=>{
-
-        console.log(res);
-      })
-
-
-      
+     container.push(list.text)
+    
     }
+    console.log(container);
 
                       let body = {
                                  to: sender,
@@ -454,8 +448,9 @@ request({
                                   {
                                     "type": "flex",
                                     "altText": "This is a Flex Message",
-                                    "contents": {
+                                    "contents":{
                                       "type": "bubble",
+                                      "direction": "ltr",
                                       "header": {
                                         "type": "box",
                                         "layout": "vertical",
@@ -506,121 +501,95 @@ request({
                                                 "color": "#0D0B0BFF"
                                               },
                                               {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": container[0],
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#FFD700FF",
-                                                "margin": "xs",
-                                                "height": "sm",
-                                                "style": "link"
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "hello, world",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "separator",
+                                                "margin": "md",
+                                                "color": "#0D0B0BFF"
                                               },
                                               {
                                                 "type": "button",
                                                 "action": {
                                                   "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#C0C0C0",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#CD7F32",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
-                                                  "uri": "https://linecorp.com"
-                                                },
-                                                "color": "#E0E7FDFF",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "Button",
+                                                  "label": "More Info",
                                                   "uri": "https://linecorp.com"
                                                 },
                                                 "color": "#E0E7FDFF",
@@ -629,7 +598,6 @@ request({
                                               },
                                               {
                                                 "type": "separator",
-                                                "margin": "none",
                                                 "color": "#0D0B0BFF"
                                               }
                                             ]
