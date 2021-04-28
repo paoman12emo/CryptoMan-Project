@@ -743,7 +743,8 @@ request({
                                             },
                                             "color": "#BECDA0FF",
                                             "margin": "xs",
-                                            "height": "sm"
+                                            "height": "sm",
+                                            "style": "primary"
                                           },
                                           {
                                             "type": "separator",
