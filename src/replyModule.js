@@ -430,7 +430,7 @@ request({
     for(let i = 1; i<=10; i++){
       let list=topsLists[i]
       if(list.text.includes(' ')){
-        let newList = list.text.replace(/\s/g, '-').toLowerCase();
+        let newList = list.text.replace(/\s/g, '-');
         container.push(newList)
       }else{
         container.push(list.text)
@@ -503,7 +503,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[0],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[0]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[0].toLowerCase()
                                                 },
                                                 "color": "#FFD700",
                                                 "margin": "none",
@@ -529,7 +529,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[1],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[1]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[1].toLowerCase()
                                                 },
                                                 "color": "#C0C0C0",
                                                 "margin": "none",
@@ -555,7 +555,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[2],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[2]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[2].toLowerCase()
                                                 },
                                                 "color": "#CD7F32",
                                                 "margin": "none",
@@ -581,7 +581,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[3],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[3]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[3].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -607,7 +607,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[4],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[4]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[4].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -633,7 +633,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[5],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[5]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[5].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -659,7 +659,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[6],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[6]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[6].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -685,7 +685,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[7],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[7]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[7].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -711,7 +711,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[8],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[8]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[8].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
@@ -737,7 +737,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": container[9],
-                                                  "uri": "https://www.coingecko.com/en/coins/"+container[9]
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[9].toLowerCase()
                                                 },
                                                 "color": "#62C3D4FF",
                                                 "margin": "none",
