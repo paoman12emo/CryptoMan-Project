@@ -24,10 +24,10 @@ try{
     else if(msg.includes('CMU')){
         queryName(msg.substring(3,msg.length),sender,"USD");
     } 
-    else if(msg.includes('CMTNEWS')){
+    else if(msg.includes('CMTNEWS')||msg.includes('CMTNEW')){
         getNews(sender)
     }  
-    else if(msg.includes('CMTLISTS')){
+    else if(msg.includes('CMTLISTS')||msg.includes('CMTLIST')){
         getTopLists(sender)
     }  
     else{
