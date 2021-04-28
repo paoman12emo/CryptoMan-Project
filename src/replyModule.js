@@ -172,8 +172,13 @@ const Coin = require("../Model/Model.js");
               },
               {
                 "type": "image",
-                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg",
-                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg" //HowTo
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PetV.jpg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PetV.jpg" //HowTo
+              },
+              {
+                "type": "image",
+                "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PmoQ.jpgg",
+                "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PmoQ.jpg"//HowTo
               }
           ]
          }
@@ -201,13 +206,13 @@ request({
                    messages: [
                     {
                       "type": "image",
-                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg",
-                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/27/A2Af79.jpg"
+                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PetV.jpg",
+                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PetV.jpg"
                     },
                     {
                       "type": "image",
-                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/28/A65ml2.jpg",
-                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/28/A65ml2.jpg"
+                      "originalContentUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PmoQ.jpgg",
+                      "previewImageUrl": "https://sv1.picz.in.th/images/2021/04/28/A6PmoQ.jpg"
                     }
                  ]
                 }
