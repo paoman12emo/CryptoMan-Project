@@ -29,6 +29,4 @@ async function getTopLists(sender){
 
 }
 
-getTopLists();
-
 module.exports = getTopLists;
