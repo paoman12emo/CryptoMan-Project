@@ -732,6 +732,7 @@ request({
                                           },
                                           {
                                             "type": "separator",
+                                            "margin": "md",
                                             "color": "#0D0B0BFF"
                                           },
                                           {
