@@ -502,7 +502,34 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "🥇 "+container[0],
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#FFD700",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "🥈 "+container[1],
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#C0C0C0",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "🥉 "+container[2],
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#CD7F32",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": "4) "+container[3],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -510,7 +537,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "5) "+container[4],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -518,7 +545,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "6) "+container[5],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -526,7 +553,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "7) "+container[6],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -534,7 +561,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "8) "+container[7],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -542,7 +569,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
+                                                "text": "9) "+container[8],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -550,31 +577,7 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "hello, world",
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "hello, world",
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "hello, world",
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "hello, world",
+                                                "text": "10) "+container[9],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "align": "center",
@@ -590,7 +593,7 @@ request({
                                                 "action": {
                                                   "type": "uri",
                                                   "label": "More Info",
-                                                  "uri": "https://linecorp.com"
+                                                  "uri": "https://www.coingecko.com/en"
                                                 },
                                                 "color": "#E0E7FDFF",
                                                 "margin": "xs",
