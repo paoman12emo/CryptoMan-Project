@@ -595,7 +595,7 @@ request({
                                                   "label": "More Info",
                                                   "uri": "https://www.coingecko.com/en"
                                                 },
-                                                "color": "#E0E7FDFF",
+                                                "color": "#bae8e8",
                                                 "margin": "xs",
                                                 "height": "sm"
                                               },
