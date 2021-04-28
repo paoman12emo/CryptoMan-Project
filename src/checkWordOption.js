@@ -3,6 +3,7 @@ const {howTo,} = require("./replyModule.js");
 const getNews = require("./news.js");
 const getTopLists = require("./topTenLists.js")
 
+
 function checkWord(char,sender){
 
 let msg = char.toUpperCase();
