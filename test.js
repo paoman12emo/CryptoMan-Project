@@ -1,28 +1,28 @@
-const mongoose = require('mongoose');
-const Coin = require("./Model/Model.js");
+// const mongoose = require('mongoose');
+// const Coin = require("./Model/Model.js");
 
 
-mongoose.connect('mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  });
+// mongoose.connect('mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+//   });
 
-let coin = new Coin({
-  coinFullName: "RADICLE" ,
-  coinShortName: "RAD",
-  URL: "https://www.coingecko.com/th/coin/radicle/usd"
-})
+// let coin = new Coin({
+//   coinFullName: "RADICLE" ,
+//   coinShortName: "RAD",
+//   URL: "https://www.coingecko.com/th/coin/radicle/usd"
+// })
 
-console.log(coin);
-coin.save((err)=>{
-  if(!err){
-    console.log("ok");
-  }else{
-    console.log(err);
-  }
-})
+// console.log(coin);
+// coin.save((err)=>{
+//   if(!err){
+//     console.log("ok");
+//   }else{
+//     console.log(err);
+//   }
+// })
 
 
 
@@ -63,3 +63,49 @@ coin.save((err)=>{
 // }
 
 // queryCoin("The-Graph");
+const axios = require('axios');
+const cheerio = require('cheerio');
+const mongoose = require('mongoose');
+const Coin = require("./Model/Model.js");
+
+
+
+
+
+async function getTopLists(){
+  try{
+    let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+
+    mongoose.connect(urlDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  });
+    const response =  await axios.get(`https://www.coingecko.com/en`)
+    const html = response.data
+    const $ = cheerio.load(html)
+    const tops = $('.coin-name');
+    const topsLists = []
+
+    tops.each((index, element)=>{
+        topsLists.push({
+            text: $(element).attr('data-text')
+          });
+        });
+  
+        topsLists.forEach((item)=>{
+          if(item.includes(" ")){
+            let newItem = item.toUpperCase()
+          }
+          
+          Coin.find({})
+        })
+  }
+ catch(err){
+   console.log(err);
+ }
+
+}
+
+getTopLists();
