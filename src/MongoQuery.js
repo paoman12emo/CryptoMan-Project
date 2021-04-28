@@ -1,4 +1,3 @@
-require('dotenv').config()
 const mongoose = require('mongoose');
 const Coin = require("../Model/Model.js");
 const queryCoin = require("./queryCoin");

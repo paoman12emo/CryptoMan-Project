@@ -63,49 +63,58 @@
 // }
 
 // queryCoin("The-Graph");
-const axios = require('axios');
-const cheerio = require('cheerio');
-const mongoose = require('mongoose');
-const Coin = require("./Model/Model.js");
+// const axios = require('axios');
+// const cheerio = require('cheerio');
+// const mongoose = require('mongoose');
+// const Coin = require("./Model/Model.js");
 
 
 
 
 
-async function getTopLists(){
-  try{
-    let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+// async function getTopLists(){
+//   try{
+//     let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
-    mongoose.connect(urlDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  });
-    const response =  await axios.get(`https://www.coingecko.com/en`)
-    const html = response.data
-    const $ = cheerio.load(html)
-    const tops = $('.coin-name');
-    const topsLists = []
+//     mongoose.connect(urlDB, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+//   });
+//     const response =  await axios.get(`https://www.coingecko.com/en`)
+//     const html = response.data
+//     const $ = cheerio.load(html)
+//     const tops = $('.coin-name');
+//     const topsLists = []
 
-    tops.each((index, element)=>{
-        topsLists.push({
-            text: $(element).attr('data-text')
-          });
-        });
+//     tops.each((index, element)=>{
+//         topsLists.push({
+//             text: $(element).attr('data-text')
+//           });
+//         });
   
-        topsLists.forEach((item)=>{
-          if(item.includes(" ")){
-            let newItem = item.toUpperCase()
-          }
+//         topsLists.forEach((item)=>{
+//           let x =item.text
+//           console.log(x);
+//           // if(x.includes(' ')){
+//           //   let newItem = item.replace(/\s/g, '-').toUpperCase();
+//           //   Coin.find({coinFullName:"newItem"},(err, res)=>{
+//           //     console.log(res);
+//           //   })
+//           // }else{
+//           //   Coin.find({coinFullName:"newItem"},(err, res)=>{
+//           //     console.log(res);
+//           //   })
+//           // }
           
-          Coin.find({})
-        })
-  }
- catch(err){
-   console.log(err);
- }
+         
+//         })
+//   }
+//  catch(err){
+//    console.log(err);
+//  }
 
-}
+// }
 
-getTopLists();
+// getTopLists();
