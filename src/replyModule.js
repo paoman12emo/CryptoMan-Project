@@ -430,7 +430,7 @@ request({
     for(let i = 1; i<=10; i++){
       let list=topsLists[i]
       if(list.text.includes(' ')){
-        let newList = list.text.replace(/\s/g, '-');
+        let newList = list.text.replace(/\s/g, '-').toLowerCase();
         container.push(newList)
       }else{
         container.push(list.text)
