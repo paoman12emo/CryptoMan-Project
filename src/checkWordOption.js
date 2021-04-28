@@ -1,7 +1,7 @@
-const queryName = require("./MongoQuery.js")
-const {howTo,} = require("./replyModule.js");
+const queryName = require("./MongoQuery.js");
+const {howTo} = require("./replyModule.js");
 const getNews = require("./news.js");
-const getTopLists = require("./topTenLists.js")
+const getTopLists = require("./topTenLists.js");
 
 
 function checkWord(char,sender){

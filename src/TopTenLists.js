@@ -21,7 +21,7 @@ async function getTopLists(sender){
   
         await replyTopLists(sender,topsLists);
 
-        //[{},{}]
+        
   }
  catch(err){
    console.log(err);
