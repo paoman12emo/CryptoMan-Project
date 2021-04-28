@@ -477,7 +477,7 @@ request({
                                         "action": {
                                           "type": "uri",
                                           "label": "Action",
-                                          "uri": "https://linecorp.com"
+                                          "uri": "https://www.coingecko.com/en"
                                         }
                                       },
                                       "body": {
@@ -492,17 +492,11 @@ request({
                                         "contents": [
                                           {
                                             "type": "box",
-                                            "layout": "vertical",
-                                            "spacing": "sm",
+                                            "layout": "horizontal",
                                             "contents": [
                                               {
-                                                "type": "separator",
-                                                "margin": "none",
-                                                "color": "#0D0B0BFF"
-                                              },
-                                              {
                                                 "type": "text",
-                                                "text": "🥇 "+container[0],
+                                                "text": " 🥇 ",
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "color": "#FFD700",
@@ -511,99 +505,250 @@ request({
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "🥈 "+container[1],
+                                                "text": container[0],
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#FFD700",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "🥈",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#FFD700",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[1],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "color": "#C0C0C0",
                                                 "align": "center",
                                                 "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "🥉",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#FFD700",
+                                                "align": "center",
+                                                "contents": []
                                               },
                                               {
                                                 "type": "text",
-                                                "text": "🥉 "+container[2],
+                                                "text": container[2],
                                                 "weight": "bold",
                                                 "size": "lg",
                                                 "color": "#CD7F32",
                                                 "align": "center",
                                                 "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "4) "+container[3],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "5) "+container[4],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "6) "+container[5],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "7) "+container[6],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "8) "+container[7],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "9) "+container[8],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "text",
-                                                "text": "10) "+container[9],
-                                                "weight": "bold",
-                                                "size": "lg",
-                                                "align": "center",
-                                                "contents": []
-                                              },
-                                              {
-                                                "type": "separator",
-                                                "margin": "md",
-                                                "color": "#0D0B0BFF"
-                                              },
-                                              {
-                                                "type": "button",
-                                                "action": {
-                                                  "type": "uri",
-                                                  "label": "More Info",
-                                                  "uri": "https://www.coingecko.com/en"
-                                                },
-                                                "color": "#bae8e8",
-                                                "margin": "xs",
-                                                "height": "sm"
-                                              },
-                                              {
-                                                "type": "separator",
-                                                "color": "#0D0B0BFF"
                                               }
                                             ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "4.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[3],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "5.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[4],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "6.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[5],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "7.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[6],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "8.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[7],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "9.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[8],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "box",
+                                            "layout": "horizontal",
+                                            "contents": [
+                                              {
+                                                "type": "text",
+                                                "text": "10.",
+                                                "weight": "bold",
+                                                "size": "lg",
+                                                "color": "#3592D5FF",
+                                                "align": "center",
+                                                "contents": []
+                                              },
+                                              {
+                                                "type": "text",
+                                                "text": container[9],
+                                                "weight": "bold",
+                                                "size": "md",
+                                                "color": "#62C3D4FF",
+                                                "align": "center",
+                                                "contents": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "separator",
+                                            "color": "#0D0B0BFF"
+                                          },
+                                          {
+                                            "type": "button",
+                                            "action": {
+                                              "type": "uri",
+                                              "label": "More Info",
+                                              "uri": "https://www.coingecko.com/en"
+                                            },
+                                            "color": "#BECDA0FF",
+                                            "margin": "xs",
+                                            "height": "sm"
+                                          },
+                                          {
+                                            "type": "separator",
+                                            "margin": "md",
+                                            "color": "#0D0B0BFF"
                                           },
                                           {
                                             "type": "text",
