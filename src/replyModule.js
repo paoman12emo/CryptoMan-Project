@@ -424,21 +424,17 @@ request({
             
 
    async function replyTopLists(sender,topsLists) {
-    let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
-
-    mongoose.connect(urlDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  });
     let container =[] 
     
 
     for(let i = 1; i<=10; i++){
       let list=topsLists[i]
-     container.push(list.text)
-    
+      if(list.text.includes(' ')){
+        let newList = list.text.replace(/\s/g, '-');
+        container.push(newList)
+      }else{
+        container.push(list.text)
+      }
     }
     console.log(container);
 
@@ -486,8 +482,8 @@ request({
                                         "spacing": "md",
                                         "action": {
                                           "type": "uri",
-                                          "label": "Action",
-                                          "uri": "https://linecorp.com"
+                                          "label": "Action"
+                                        
                                         },
                                         "contents": [
                                           {
@@ -504,13 +500,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[0],
-                                                "weight": "bold",
-                                                "size": "lg",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[0],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[0]
+                                                },
                                                 "color": "#FFD700",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -528,13 +526,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[1],
-                                                "weight": "bold",
-                                                "size": "lg",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[1],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[1]
+                                                },
                                                 "color": "#C0C0C0",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -552,13 +552,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[2],
-                                                "weight": "bold",
-                                                "size": "lg",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[2],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[2]
+                                                },
                                                 "color": "#CD7F32",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -576,13 +578,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[3],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[3],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[3]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -600,13 +604,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[4],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[4],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[4]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -624,13 +630,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[5],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[5],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[5]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -648,13 +656,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[6],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[6],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[6]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -672,13 +682,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[7],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[7],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[7]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -696,13 +708,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[8],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[8],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[8]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
@@ -720,13 +734,15 @@ request({
                                                 "contents": []
                                               },
                                               {
-                                                "type": "text",
-                                                "text": container[9],
-                                                "weight": "bold",
-                                                "size": "md",
+                                                "type": "button",
+                                                "action": {
+                                                  "type": "uri",
+                                                  "label": container[9],
+                                                  "uri": "https://www.coingecko.com/en/coins/"+container[9]
+                                                },
                                                 "color": "#62C3D4FF",
-                                                "align": "center",
-                                                "contents": []
+                                                "margin": "none",
+                                                "height": "sm"
                                               }
                                             ]
                                           },
