@@ -436,7 +436,6 @@ request({
         container.push(list.text)
       }
     }
-    console.log(container);
 
                       let body = {
                                  to: sender,
@@ -482,8 +481,8 @@ request({
                                         "spacing": "md",
                                         "action": {
                                           "type": "uri",
-                                          "label": "Action"
-                                        
+                                          "label": "Action",
+                                          "uri": "https://www.coingecko.com/en"
                                         },
                                         "contents": [
                                           {
