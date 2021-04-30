@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Coin = require("../Model/Model.js");
+const {Coin} = require("../Model/Model.js");
 const queryCoin = require("./queryCoin");
 const {fallBack} = require("./replyModule.js");
 

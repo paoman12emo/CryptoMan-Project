@@ -35,13 +35,22 @@ app.post('/callback',(req, res) => {
  try{
 
   const status = req.body.events[0].type;
-  const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
+  let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
   console.log({status:status});
 
   Sender.find({sender:sender},(err,res)=>{
     if(res=[]){
-      console.log("Array emtry");
+      let register = new Sender({
+        sender: sender
+      })
+        
+      register.save((err)=>{
+        if(err){
+          console.log(err);
+        }
+      })
+      
     }else{
       console.log(Found);
     }
