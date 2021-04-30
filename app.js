@@ -42,7 +42,6 @@ app.post('/callback',(req, res) => {
   console.log({status:status,sender:sender});
 
   Sender.find({sender:sender},(err,res)=>{
-    console.log(res);
     if(res.length===0){
       let register = new Sender({
         sender: sender
@@ -73,11 +72,8 @@ else{
    
     let coinName = checkWord(msg,sender);
 
-    cron.schedule('* * * * *', () => {
-     console.log("send");
      scheduleNews();
-    });
-     
+  
   
    if( coinName === "howTo"){
      
