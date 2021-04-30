@@ -33,11 +33,11 @@ useCreateIndex: true
         });
 
 
-    Sender.find({},(err,res)=>{
+   await Sender.find({},(err,res)=>{
       res.forEach((item)=>{
         let sender = item.sender;
 
-        await reportNews(sender,newsLists);
+         reportNews(sender,newsLists);
 
        console.log(sender);
       })
