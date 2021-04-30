@@ -7,7 +7,6 @@ const {reportNews}= require('./replyModule.js');
 
  
 async function scheduleNews(){
-    console.log("2");
 
 
 let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
@@ -33,9 +32,8 @@ useCreateIndex: true
         });
 
 
-   await Sender.find({sender:'Ud664f827d5ae526a36458104b75da483'},(err,res)=>{
+   await Sender.find({},(err,res)=>{
       res.forEach((item)=>{
-          console.log(item,"3");
         let sender = item.sender;
 
          reportNews(sender,newsLists);
