@@ -61,21 +61,19 @@ app.post('/callback',(req, res) => {
     }
   })
 
-  
-  status === "join"&& greeting(sender);
-  
+  if(status === "join"|| status === "follow" ){
+    greeting(sender)
+  }
+else{
   const char = req.body.events[0].message.text;
 
   let msg = char.replace(/\s/g, '');
-  
-
-if(status!= "join"){
 
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"&& msg.length !== 3){
    
     let coinName = checkWord(msg,sender);
 
-    cron.schedule('* 12 * * *', () => {
+    cron.schedule('10 * * * * *', () => {
      console.log("send");
      scheduleNews();
     });
