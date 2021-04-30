@@ -24,6 +24,8 @@ app.post('/callback',(req, res) => {
 
   const status = req.body.events[0].type;
   const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
+
+  console.log({status:status, sender:sender});
   
 
   status === "join"&& greeting(sender);
