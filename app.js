@@ -5,6 +5,7 @@ const checkWord = require("./src/checkWordOption.js");
 const mongoose = require("mongoose")
 const {Sender} = require("./Model/Model.js")
 const scheduleNews = require("./src/ScheduleNews.js")
+const cron = require('node-cron');
 
 
 
