@@ -39,7 +39,7 @@ app.post('/callback',(req, res) => {
   const status = req.body.events[0].type;
   let sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
-  console.log({status:status});
+  console.log({status:status,sender:sender});
 
   Sender.find({sender:sender},(err,res)=>{
     console.log(res[0]);
