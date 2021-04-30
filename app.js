@@ -27,6 +27,13 @@ let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/Cry
   });
 
 
+//schedule-news
+cron.schedule('5 * * * * *', () => {
+  scheduleNews()
+
+});
+
+
 
 //Message
 
@@ -71,13 +78,7 @@ else{
    
     let coinName = checkWord(msg,sender);
 
-        
-    cron.schedule('* 5 * * *', () => {
-      scheduleNews()
-
-    });
-    
-  
+   
    if( coinName === "howTo"){
      
     howTo(sender)
