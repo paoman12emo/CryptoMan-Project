@@ -73,7 +73,7 @@ else{
    
     let coinName = checkWord(msg,sender);
 
-    cron.schedule('10 * * * * *', () => {
+    cron.schedule('* 4 * * *', () => {
      console.log("send");
      scheduleNews();
     });
