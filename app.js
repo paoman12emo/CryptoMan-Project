@@ -5,9 +5,6 @@ const checkWord = require("./src/checkWordOption.js");
 const mongoose = require("mongoose")
 const {Sender} = require("./Model/Model.js")
 const scheduleNews = require("./src/ScheduleNews.js")
-const cron = require('node-cron');
-
-
 
 
 
@@ -68,19 +65,11 @@ else{
 
   let msg = char.replace(/\s/g, '');
 
+
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"&& msg.length !== 3){
    
     let coinName = checkWord(msg,sender);
-
-
-    
- cron.schedule('5 * * * * *', () => {
-   console.log("1");
-  scheduleNews();
- });
-
-   
-  
+ 
   
    if( coinName === "howTo"){
      
