@@ -56,7 +56,7 @@ app.post('/callback',(req, res) => {
       })
       
     }else{
-      console.log("Found");
+      console.log("Found ID");
     }
   })
 
@@ -72,7 +72,13 @@ else{
    
     let coinName = checkWord(msg,sender);
 
-     scheduleNews();
+
+    
+ cron.schedule('5 * * * * *', () => {
+  scheduleNews();
+ });
+
+   
   
   
    if( coinName === "howTo"){
