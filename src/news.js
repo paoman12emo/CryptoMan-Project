@@ -18,10 +18,8 @@ async function getNews(sender){
             text: $(element).text(), 
             url: $(element).attr('href'), 
           });
-        })
-        console.log(newsLists);
-
-        await reportNews(sender,newsLists);
+        }).then(reportNews(sender,newsLists));
+  
   }
  catch(err){
    console.log(err);
