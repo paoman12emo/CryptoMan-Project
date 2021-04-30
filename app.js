@@ -43,7 +43,7 @@ app.post('/callback',(req, res) => {
 
   Sender.find({sender:sender},(err,res)=>{
     console.log(res);
-    if(res==undefined){
+    if(res.length===0){
       let register = new Sender({
         sender: sender
       })
@@ -51,6 +51,8 @@ app.post('/callback',(req, res) => {
       register.save((err)=>{
         if(err){
           console.log(err);
+        }else{
+          console.log("resigter complete");
         }
       })
       
