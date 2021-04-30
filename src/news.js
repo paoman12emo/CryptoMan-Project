@@ -1,11 +1,22 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const {Sender} = require("../Model/Model.js");
+const cron = require('node-cron');
 
 const {reportNews}= require('./replyModule.js');
 
 
 
 async function getNews(sender){
+
+let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+
+mongoose.connect(urlDB, {
+useNewUrlParser: true,
+useUnifiedTopology: true,
+useFindAndModify: false,
+useCreateIndex: true
+});
   try{
     const response =  await axios.get(`https://www.coingecko.com/th/news`)
     const html = response.data
@@ -19,8 +30,22 @@ async function getNews(sender){
             url: $(element).attr('href'), 
           });
         });
-        
+
         await reportNews(sender,newsLists);
+
+
+  // cron.schedule('* * * * *', () => {
+
+    Sender.find({},(err,res)=>{
+      res.forEach((sender)=>{
+       console.log(sender);
+      })
+    })
+         
+        // });
+       
+        
+        
   
   }
  catch(err){

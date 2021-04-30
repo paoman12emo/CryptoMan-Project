@@ -54,12 +54,9 @@ app.post('/callback',(req, res) => {
     }else{
       console.log(Found);
     }
-    console.log(res);
   })
 
   
-  
-
   status === "join"&& greeting(sender);
   
   const char = req.body.events[0].message.text;
