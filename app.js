@@ -28,8 +28,9 @@ let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/Cry
 
 
 //schedule-news
-cron.schedule('5 * * * * *', () => {
-  scheduleNews()
+cron.schedule('* 4 * * *', () => {
+  console.log("Set schedule-news");
+  scheduleNews();
 
 });
 

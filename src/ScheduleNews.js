@@ -32,7 +32,7 @@ useCreateIndex: true
         });
 
 
-   await Sender.find({sender:'Ud664f827d5ae526a36458104b75da483'},(err,res)=>{
+   await Sender.find({},(err,res)=>{
       res.forEach((item)=>{
         let sender = item.sender;
 
