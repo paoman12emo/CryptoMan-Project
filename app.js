@@ -69,7 +69,13 @@ else{
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"&& msg.length !== 3){
    
     let coinName = checkWord(msg,sender);
- 
+
+        
+    cron.schedule('* 5 * * *', () => {
+      scheduleNews()
+
+    });
+    
   
    if( coinName === "howTo"){
      

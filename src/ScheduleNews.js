@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 
 const {reportNews}= require('./replyModule.js');
 
-    
-cron.schedule('5 * * * * *', async () => {
+ 
+async function scheduleNews(){
+    console.log("2");
 
 
 let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
@@ -50,5 +51,7 @@ useCreateIndex: true
  }
 
     
-});
 
+
+}
+module.exports= scheduleNews;
