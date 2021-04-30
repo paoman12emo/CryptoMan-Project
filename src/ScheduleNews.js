@@ -7,6 +7,9 @@ const cron = require('node-cron');
 const {reportNews}= require('./replyModule.js');
 
 
+
+function scheduleNews(){
+
  cron.schedule('5 * * * * *', async () => {
      
 
@@ -53,4 +56,6 @@ useCreateIndex: true
 
     
 });
+
+}
 module.exports= scheduleNews;
