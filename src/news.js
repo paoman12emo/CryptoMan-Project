@@ -10,7 +10,7 @@ async function getNews(sender){
     const response =  await axios.get(`https://www.coingecko.com/th/news`)
     const html = response.data
     const $ = cheerio.load(html)
-    const news = $('.posts-article-snippet-title a');
+    const news = $('.tw-text-xl a[target]');
     const newsLists = []
 
     news.each((index, element)=>{
