@@ -40,7 +40,7 @@ app.post('/callback',(req, res) => {
   console.log({status:status});
 
   Sender.find({sender:sender},(err,res)=>{
-    if(res=[]){
+    if(res[0].sender!=sender){
       let register = new Sender({
         sender: sender
       })
