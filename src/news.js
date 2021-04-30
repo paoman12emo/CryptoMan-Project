@@ -35,15 +35,19 @@ useCreateIndex: true
         await reportNews(sender,newsLists);
 
 
-  // cron.schedule('* * * * *', () => {
+  cron.schedule('20 * * * * *', () => {
 
     Sender.find({},(err,res)=>{
-      res.forEach((sender)=>{
+      res.forEach((item)=>{
+        let sender = item.sender;
+
+        await reportNews(sender,newsLists);
+
        console.log(sender);
       })
     })
          
-        // });
+        });
        
         
         
