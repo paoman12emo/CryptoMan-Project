@@ -75,6 +75,7 @@ else{
 
     
  cron.schedule('5 * * * * *', () => {
+   console.log("1");
   scheduleNews();
  });
 
