@@ -4,6 +4,8 @@ const {greeting} = require("./src/replyModule.js");
 const checkWord = require("./src/checkWordOption.js");
 const mongoose = require("mongoose")
 const {Sender} = require("./Model/Model.js")
+const scheduleNews = require("./src/ScheduleNews.js")
+const cron = require('node-cron');
 
 
 
@@ -69,6 +71,10 @@ if(status!= "join"){
   if(msg.substring(0,3).toUpperCase()==="CMT"&& msg.length !== 3||msg.substring(0,3).toUpperCase()==="CMU"&& msg.length !== 3){
    
     let coinName = checkWord(msg,sender);
+
+    cron.schedule('20 * * * * *', () => {
+      scheduleNews();
+    });
      
   
    if( coinName === "howTo"){
@@ -76,8 +82,6 @@ if(status!= "join"){
     howTo(sender)
 
    }
-
-  
     res.sendStatus(200)
 
   }else{

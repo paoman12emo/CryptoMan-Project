@@ -1,14 +1,14 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const {Sender} = require("../Model/Model.js");
-const cron = require('node-cron');
 const mongoose = require('mongoose');
 
 const {reportNews}= require('./replyModule.js');
 
 
 
-cron.schedule('20 * * * * *', async () => {
+async function scheduleNews(){
+
 
 let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
@@ -49,4 +49,6 @@ useCreateIndex: true
    console.log(err);
  }
 
-});
+    
+}
+module.exports= scheduleNews;
