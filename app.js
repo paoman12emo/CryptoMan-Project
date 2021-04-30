@@ -72,8 +72,8 @@ if(status!= "join"){
    
     let coinName = checkWord(msg,sender);
 
-    cron.schedule('20 * * * * *', () => {
-      scheduleNews();
+    cron.schedule('20 * * * * *', async() => {
+     await scheduleNews();
     });
      
   
