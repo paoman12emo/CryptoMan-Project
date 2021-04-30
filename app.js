@@ -40,6 +40,11 @@ app.post('/callback',(req, res) => {
   console.log({status:status});
 
   Sender.find({sender:sender},(err,res)=>{
+    if(res=[]){
+      console.log("Array emtry");
+    }else{
+      console.log(Found);
+    }
     console.log(res);
   })
 
