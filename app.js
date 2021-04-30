@@ -33,6 +33,7 @@ app.post('/callback',(req, res) => {
   const char = req.body.events[0].message.text;
 
   let msg = char.replace(/\s/g, '');
+  console.log(msg);
 
 if(status!= "join"){
 
