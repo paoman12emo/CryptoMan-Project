@@ -9,10 +9,15 @@ const coinSchema = mongoose.Schema({
 });
 
 
+const senderSchema = mongoose.Schema({
+    sender: String
+});
 
 
+
+const Sender = mongoose.model("Sender",senderSchema)
 const Coin = mongoose.model("CoinName",coinSchema);
 
 
 
-module.exports = Coin; 
+module.exports = {Coin, Sender}; 

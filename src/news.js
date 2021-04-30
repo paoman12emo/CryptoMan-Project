@@ -18,7 +18,9 @@ async function getNews(sender){
             text: $(element).text(), 
             url: $(element).attr('href'), 
           });
-        }).then(reportNews(sender,newsLists));
+        });
+        
+        await reportNews(sender,newsLists);
   
   }
  catch(err){

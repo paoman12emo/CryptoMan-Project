@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const {greeting} = require("./src/replyModule.js");
 const checkWord = require("./src/checkWordOption.js");
+const mongoose = require("mongoose")
+const {Sender} = require("./Model/Model.js")
+
 
 
 
@@ -14,6 +17,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
+let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+
+    mongoose.connect(urlDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  });
+
 
 
 //Message
@@ -25,7 +37,13 @@ app.post('/callback',(req, res) => {
   const status = req.body.events[0].type;
   const sender = req.body.events[0].source.groupId?req.body.events[0].source.groupId:req.body.events[0].source.userId;
 
-  console.log({status:status, sender:sender});
+  console.log({status:status});
+
+  Sender.find({sender:sender},(err,res)=>{
+    console.log(res);
+  })
+
+  
   
 
   status === "join"&& greeting(sender);
