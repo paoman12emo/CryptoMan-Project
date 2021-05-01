@@ -13,7 +13,7 @@ function queryCoin(coinName,sender,url,cur){
            include_24hr_vol: 'true'
            },
       headers: {
-        'x-rapidapi-key': '6c6939db0amsh5ec1aff2cab3017p199644jsn6945f7f35b64',
+        'x-rapidapi-key': 'API_KEY',
         'x-rapidapi-host': 'coingecko.p.rapidapi.com',
         useQueryString: true
       }

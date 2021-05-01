@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
-let urlDB ='mongodb+srv://paoman12emo:paoman12pao@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
+let urlDB ='mongodb+srv://paoman12emo:@cluster0.mf24n.mongodb.net/CryptoMan?retryWrites=true&w=majority' 
 
     mongoose.connect(urlDB, {
     useNewUrlParser: true,
